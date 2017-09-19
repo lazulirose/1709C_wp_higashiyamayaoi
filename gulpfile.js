@@ -1,7 +1,8 @@
 var gulp = require("gulp");
-var sass = require("gulp-sass");
+var scss = require("gulp-sass");
 var autoprefixer = require("gulp-autoprefixer");
 var uglify = require("gulp-uglify");
+
 var concat = require('gulp-concat');
 var browser = require("browser-sync");
 var plumber = require("gulp-plumber");
@@ -10,8 +11,8 @@ var img = require('gulp-imagemin');
 
 gulp.task("default",['server'], function() {
     gulp.watch(["js/**/*.js","!js/min/**/*.js"],["js"]);
-    gulp.watch("sass/**/*.scss",["sass"]);
-    gulp.watch('images/**/*', ["images"]);
+    gulp.watch("scss/**/*.scss",["scss"]);
+    gulp.watch("images/**/*", ["images"]);
 });
 gulp.task("server", function() {
     browser({
@@ -36,12 +37,12 @@ gulp.task("js", function() {
         .pipe(browser.reload({stream:true}));
 });
  
-gulp.task("sass", function() {
-    gulp.src("sass/**/*scss")
+gulp.task("scss", function() {
+    gulp.src("scss/**/*scss")
         .pipe(plumber())
-        .pipe(frontnote())
-        .pipe(sass())
+        .pipe(scss())
         .pipe(autoprefixer())
+        .pipe(frontnote())
         .pipe(gulp.dest("./css"))
         .pipe(browser.reload({stream:true}))
 });
