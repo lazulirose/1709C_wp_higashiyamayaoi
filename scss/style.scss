@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/*
+  Theme Name: 東山 八百伊
+  Theme URI: 
+  Author: 
+  Author URI: 
+  Description: Description
+  Version: 1.0.0
+  License:
+  License URI:
+  Text Domain: yaoi_wordpress
+*/
+
+/*
+#overview 
+*/
+ 
+/*#styleguide 
+```
+```
+*/
+
+/*--------------------
+>>> TABLE OF CONTENTS:
+----------------------
+    1.0 reset
+    2.0 fonts
+    3.0 mixins_extends
+    4.0 base
+--------------------*/
+
+/*----- 1.0 reset -----*/
+@import 'reset';
+
+/*----- 2.0 fonts -----*/
+@import 'fonts';
+
+/*----- 3.0 mixins_extends -----*/
+@import 'mixins_extends';
+
+/*----- 4.0 base -----*/
+@import 'base';
