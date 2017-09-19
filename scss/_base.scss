@@ -15,6 +15,7 @@ body {
   color: $base-text;
   background: $main-color;
   @include font-family("hiraginoG");
+    font-size: 12px;
 }
 
 //*  Sectioning content
@@ -30,6 +31,9 @@ h1,h2,h3,h4,h5,h6 {
 
 /*  Phrasing content
 ------------------------*/
+li {
+    list-style-type: none;
+}
 a {
     color: $base-text;
     text-decoration: none;
