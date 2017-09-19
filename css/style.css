@@ -165,6 +165,9 @@ a:hover {
     - main
     - footer
 --------------------- */
+/* =====================
+  layout
+===================== */
 .l-header {
   position: fixed;
   top: 0;
@@ -172,8 +175,12 @@ a:hover {
   width: 100%;
   height: 40px;
   padding: 12px 4%;
-  line-height: 2;
+  line-height: 1.5;
   background-color: rgba(255, 255, 255, 0.5); }
+
+.l-footer {
+  width: 100%;
+  margin: 75px auto 60px; }
 
 /* =====================
   header
@@ -203,6 +210,7 @@ a:hover {
 
 .header-nav li {
   position: relative;
+  width: 15%;
   -webkit-box-flex: 1;
       -ms-flex: 1 calc(90% / 6);
           flex: 1 calc(90% / 6);
@@ -218,10 +226,6 @@ a:hover {
 .header-nav-item {
   margin-left: 5%;
   color: #333; }
-
-.l-footer {
-  width: 100%;
-  margin: 75px auto 60px; }
 
 .l-logo-row {
   text-align: center;
@@ -272,3 +276,30 @@ a:hover {
 
 .copyright {
   padding-left: 24px; }
+
+.l-slider {
+  width: 100%;
+  display: block;
+  margin: auto; }
+
+#slider {
+  position: relative;
+  overflow: hidden; }
+  #slider ul {
+    margin: 0;
+    padding: 0; }
+  #slider li {
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0; }
+
+#prev {
+  position: absolute;
+  left: 0;
+  z-index: 500; }
+
+#next {
+  position: absolute;
+  right: 0;
+  z-index: 500; }

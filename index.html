@@ -33,6 +33,14 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/comon.js"></script>
+<script type="text/javascript">
+$(function() {
+   $('#slider ul').autoChange({effect : 'fade', type : 'repeat', timeout: 3000, speed : 1000})
+});
+</script>
+
 </head>
 
 <body>
@@ -62,11 +70,18 @@
     </header>
     <!--header end-->
     <main>
-        <h1 class="l-logo">
+        <h1 id="hero-logo" class="l-logo">
             <a href="index.html" class="logo"><img src="./img/logo.svg" alt=""></a>
         </h1>
         <div class="l-slider">
-            <div class="slider__inner">
+            <div id="slider" class="slider__inner">
+            <ul>
+                <li><img src="https://placehold.jp/150x150.png" alt=""></li>
+                <li><img src="https://placehold.jp/250x150.png" alt=""></li>
+                <li><img src="https://placehold.jp/350x150.png" alt=""></li>
+            </ul>
+            <a id="prev">prev</a> 
+            <a id="next">next</a>
             </div>
         </div>
         <div class="container">
