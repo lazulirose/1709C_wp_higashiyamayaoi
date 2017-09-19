@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* ---------------------
+    - common setting
+    - layout
+    - header
+    - main
+    - footer
+--------------------- */
+
+li {list-style: none;}
+
+a {
+    text-decoration: none;
+    @include linkColor(); //hover etc -> mixin
+}
+a:link {} //Before visiting
+a:visited {} //After visiting
+
+
+header {}
+main {display: block;}
+footer {}
+
+
+/* =====================
+  layout
+===================== */
+
+
+.l-header {}
+.l-footer {}
+
+
+
+/* =====================
+  header
+===================== */
+
+
+h1 {.header-logo {}}
+nav {.header-nav {}li {}.header-nav-item {}}
+
+
+
+/* =====================
+  contents
+===================== */
+
+/*  main > hero
+------------------------*/
+
+.hero {}
+.hero-heading {}
+.hero-description {}
+
+
+
+/* =====================
+  footer
+===================== */
+
+
+h1 { .footer-logo {}}
+.???_address {}
+ul { li {}a {}}
+.copyright {}

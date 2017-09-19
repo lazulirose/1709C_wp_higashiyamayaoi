@@ -1,0 +1,36 @@
+/* =====================
+  mediaquery setting
+===================== */
+
+//*  common view point var
+//------------------------*/
+
+// min-width
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 481px)',
+  'md': 'screen and (min-width: 769px)',
+  'lg': 'screen and (min-width: 801px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 480px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 800px)',
+) !default;
+
+
+// Definition of @mixin [@include mq-up() / @include mq-down()]
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+main::before {
+  @extend .headerbottom_speace;
+}

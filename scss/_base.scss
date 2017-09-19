@@ -1,0 +1,34 @@
+/* =====================
+  common setting
+===================== */
+
+* {box-sizing:border-box;}
+
+html {
+  font-size: 13px;
+  @include mq-up(md) {  font-size: 16px;  }
+}
+
+body {
+  width: ;
+  color: ;
+  background: #fff;
+  @include font-family("");
+}
+
+/*  Heading content
+------------------------*/
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight:lighter;
+}
+
+
+/*  Embedded content
+------------------------*/
+
+img {
+  width: 100%;
+  height: auto;
+}
+
