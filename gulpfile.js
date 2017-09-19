@@ -24,9 +24,6 @@ gulp.task("server", function() {
 gulp.task("js", function() {
     gulp.src(["js/**/*.js","!js/min/**/*.js"])
         .pipe(plumber())
-        .pipe(frontnote({
-            css: '../css/style.css'
-          }))
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(gulp.dest("./css"))    
@@ -42,7 +39,6 @@ gulp.task("scss", function() {
         .pipe(plumber())
         .pipe(scss())
         .pipe(autoprefixer())
-        .pipe(frontnote())
         .pipe(gulp.dest("./css"))
         .pipe(browser.reload({stream:true}))
 });
