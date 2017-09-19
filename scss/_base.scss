@@ -3,25 +3,45 @@
 ===================== */
 
 * {box-sizing:border-box;}
-
-html {
-  font-size: 13px;
-  @include mq-up(md) {  font-size: 16px;  }
-}
+//
+//html {
+//  font-size: 13px;
+//  @include mq-up(md) {  font-size: 16px;  }
+//}
 
 body {
-  width: ;
-  color: ;
-  background: #fff;
-  @include font-family("");
+    position: relative;
+  width: 100%;
+  color: $base-text;
+  background: $main-color;
+  @include font-family("hiraginoG");
 }
+
+//*  Sectioning content
+//------------------------*/
 
 /*  Heading content
 ------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight:lighter;
+  font-weight: normal;
 }
+
+
+/*  Phrasing content
+------------------------*/
+a {
+    color: $base-text;
+    text-decoration: none;
+}
+span {
+ @include font-family("hiraginoG");
+}
+
+
+//*  Interactive content
+//------------------------*/
+
 
 
 /*  Embedded content
@@ -32,3 +52,9 @@ img {
   height: auto;
 }
 
+/*  hover
+------------------------*/
+a:hover {
+    opacity: .5;
+    transition: .15s
+}

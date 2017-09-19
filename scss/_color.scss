@@ -1,5 +1,6 @@
-$black:#171717;
-$lightgray: #E9E9E9;
+$base-text:#666;
+
+$main-color: #fff;
 $darkgray: #A3A3A3;
 $red: #F0363F;
 
@@ -7,26 +8,4 @@ $pink: #EDD2D6;
 $yellow: #FAFAD7;
 $green: #EAF0E2;
 $purple: #E8E2F0;
-
-//-------------------------------------
-// links background color
-//-------------------------------------
-
-.greenBg {
-  background: rgba($green,.6);
-}
-.purpleBg {
-  background: rgba($purple,.6);
-}
-.pinkBg {
-  background: rgba($pink,.6);
-}
-.yellowBg {
-  background: rgba($yellow,.6);
-}
-.list_item_wrap {
-  figure:hover{
-    opacity: .4;
-  }
-}
 

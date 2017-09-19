@@ -28,17 +28,21 @@
     2.0 fonts
     3.0 mixins_extends
     4.0 base
+    5.0 default
 --------------------*/
-
 
 /*----- 1.0 reset -----*/
 @import 'reset';
 
 /*----- 2.0 fonts -----*/
-//@import 'fonts';
+@import 'fonts';
+@import 'color';
 
 /*----- 3.0 mixins_extends -----*/
 //@import 'mixins_extends';
 
 /*----- 4.0 base -----*/
-//@import 'base';
+@import 'base';
+
+/*----- 5.0 default -----*/
+@import 'default';
