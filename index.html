@@ -33,23 +33,36 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/comon.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $('#slider ul').autoChange({
-                effect: 'fade',
-                type: 'repeat',
-                timeout: 3000,
-                speed: 1000
-            })
-        });
-    </script>
-
 </head>
-
 <body>
     <header class="l-header">
+        <div id="header">
+            <nav class="dc-menu">
+                <a href="#" class="dc-menu-trigger"><span>Menu</span></a>
+                <div class="menu-overlay">
+                    <ul>
+                <li>
+                    <a href="" class="header-nav-item">東山八百伊のこだわり</a>
+                </li>
+                <li>
+                    <a href="" class="header-nav-item">商品一覧</a>
+                </li>
+                <li>
+                    <a href="" class="header-nav-item">お買い求め方法</a>
+                </li>
+                <li>
+                    <a href="" class="header-nav-item">店舗のご案内</a>
+                </li>
+                <li>
+                    <a href="" class="header-nav-item">会社概要</a>
+                </li>
+                <li>
+                    <a href="" class="header-nav-item">お知らせ</a>
+                </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <nav>
             <ul class="header-nav">
                 <li>
@@ -231,7 +244,7 @@
                 <a href="">高台寺御用達店 京・洛市「ねね」</a>
             </li>
             <li class="link-item">
-                <svg  class="fb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.22 26.43"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M9.86,5.11h3.35V0H8.33C5.09,0,3,2.28,3,4.77V8.1H0v5.12H3V26.43H9V13.21H12.6l.32-5.12H9V5.89C9,5.21,9.22,5.11,9.86,5.11Z"/></svg>
+                <svg class="fb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.22 26.43"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M9.86,5.11h3.35V0H8.33C5.09,0,3,2.28,3,4.77V8.1H0v5.12H3V26.43H9V13.21H12.6l.32-5.12H9V5.89C9,5.21,9.22,5.11,9.86,5.11Z"/></svg>
                 <a href="">facebook</a>
             </li>
             <li class="link-item">
@@ -244,7 +257,7 @@
     <!--aside end-->
     <footer class="l-footer">
         <h1 class="l-logo-row">
-            <a href="http://" class="footer-logo logo"><img src="./img/logo_row.svg" alt=""></a>
+            <a href="./index.html" class="footer-logo logo"><img src="./img/logo_row.svg" alt=""></a>
         </h1>
         <div class="fotter__inner">
             <small class="copyright">Copyright &#169; 2017 Higashiyama YAOI. All rights reserved.</small>
@@ -260,7 +273,26 @@
     </footer>
     <!--footer end-->
     <!-- SCRIPTS -->
-    <!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/comon.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#slider ul').autoChange({
+                effect: 'fade',
+                type: 'repeat',
+                timeout: 3000,
+                speed: 1000
+            })
+        });
+
+        $(document).ready(function() {
+            $('.dc-menu-trigger').click(function() {
+                $('.dc-menu').toggleClass("dc-menu-open");
+                $('.menu-overlay').toggleClass("open");
+                $('#header').toggleClass("shownav");
+            });
+        });
+    </script>
 </body>
 
 </html>

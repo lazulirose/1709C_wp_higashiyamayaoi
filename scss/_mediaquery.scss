@@ -14,11 +14,10 @@ $breakpoint-up: (
 
 // max-width
 $breakpoint-down: (
-  'sm': 'screen and (max-width: 480px)',
+  'sm': 'screen and (max-width: 400px)',
   'md': 'screen and (max-width: 768px)',
   'lg': 'screen and (max-width: 800px)',
 ) !default;
-
 
 // Definition of @mixin [@include mq-up() / @include mq-down()]
 @mixin mq-up($breakpoint: md) {
