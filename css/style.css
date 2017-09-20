@@ -223,7 +223,8 @@ a:hover {
           -ms-flex-pack: start;
               justify-content: flex-start;
       width: 100%;
-      height: 40px; } }
+      height: 40px;
+      padding-left: 32px; } }
 
 @media screen and (min-width: 767px) {
   .header-nav li {
@@ -239,7 +240,9 @@ a:hover {
       content: '|';
       position: absolute;
       display: block;
-      top: 0; } }
+      top: 0; }
+    .header-nav li:first-child a {
+      margin-left: -32px; } }
 
 @media screen and (min-width: 767px) {
   .header-nav-item {
@@ -319,10 +322,16 @@ a:hover {
   line-height: 1.8; }
   @media screen and (min-width: 767px) {
     .shoparea {
-      width: 38%;
-      padding: 18px 0; }
+      width: 49%;
+      padding: 18px 0;
+      line-height: 1.5; }
       .shoparea + .shoparea {
         margin-left: 2%; } }
+  @media screen and (min-width: 1199px) {
+    .shoparea {
+      width: 38%;
+      padding: 18px 0;
+      line-height: 1.8; } }
   @media screen and (max-width: 400px) {
     .shoparea {
       height: 150px;
@@ -331,12 +340,14 @@ a:hover {
 .shoparea-label {
   width: 25%;
   height: 65px;
-  padding: 0 2% 0 5%;
   text-align: right;
   font-weight: bold; }
-  @media screen and (max-width: 400px) {
+  @media screen and (min-width: 767px) {
     .shoparea-label {
-      padding: 0; } }
+      height: 55px; } }
+  @media screen and (min-width: 1199px) {
+    .shoparea-label {
+      height: 65px; } }
 
 .shoparea-address {
   width: 70%; }
@@ -382,6 +393,12 @@ a:hover {
     .recommend {
       -ms-flex-pack: distribute;
           justify-content: space-around;
+      width: 100%;
+      margin: auto; } }
+  @media screen and (min-width: 1199px) {
+    .recommend {
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
       width: 75%;
       margin: auto; } }
 
@@ -391,6 +408,11 @@ a:hover {
   padding: 0 1%;
   margin-bottom: 36px; }
   @media screen and (min-width: 767px) {
+    .recommend__inner {
+      width: 25%;
+      padding: 0;
+      margin: auto; } }
+  @media screen and (min-width: 1199px) {
     .recommend__inner {
       width: 25%;
       padding: 0 2%; } }
@@ -403,9 +425,10 @@ a:hover {
   @media screen and (min-width: 767px) {
     .recommend-item {
       width: 200px;
-      height: 310px; }
+      height: 310px;
+      margin: auto; }
       .recommend-item img {
-        width: inherit; } }
+        width: initial !important; } }
 
 .item-title {
   height: 40px;
@@ -441,6 +464,9 @@ a:hover {
   background-color: #555; }
   @media screen and (min-width: 767px) {
     .banner {
+      width: 50%; } }
+  @media screen and (min-width: 1199px) {
+    .banner {
       width: 440px;
       margin-bottom: 17px; }
       .banner:nth-child(even) {
@@ -467,11 +493,13 @@ a:hover {
     font-weight: bold; }
   @media screen and (min-width: 767px) {
     .message {
-      width: 65%;
-      height: 60px; }
+      height: 80px; }
       .message span {
         font-size: 23px;
         font-weight: normal; } }
+  @media screen and (min-width: 1199px) {
+    .message {
+      width: 65%; } }
   @media screen and (max-width: 400px) {
     .message {
       height: 200px;
@@ -489,7 +517,7 @@ a:hover {
     text-align: center; }
   @media screen and (min-width: 767px) {
     .pdf-dl img {
-      width: inherit; } }
+      width: initial !important; } }
 
 .l-news {
   width: 100%; }
@@ -517,10 +545,11 @@ a:hover {
   padding: 8px 0; }
   .news-item:not(:last-child) {
     border-bottom: 0.5px solid #a9aaab; }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 1199px) {
     .news-item {
-      padding: 0;
-      boder: none; } }
+      padding: 0; }
+      .news-item:not(:last-child) {
+        border-bottom: 0; } }
 
 .l-links {
   margin-top: 65px; }
@@ -535,6 +564,13 @@ a:hover {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   @media screen and (min-width: 767px) {
+    .link {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      margin: auto;
+      padding: 0 10%; } }
+  @media screen and (min-width: 1199px) {
     .link {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
@@ -563,6 +599,14 @@ a:hover {
   .link-item svg.in {
     width: 30px; }
   @media screen and (min-width: 767px) {
+    .link-item {
+      position: relative;
+      width: 40%;
+      height: 50px;
+      margin: 4px .5%; }
+      .link-item svg.fb {
+        margin: 0; } }
+  @media screen and (min-width: 1199px) {
     .link-item {
       position: relative;
       width: 25%;
