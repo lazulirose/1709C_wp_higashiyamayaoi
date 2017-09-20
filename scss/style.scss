@@ -39,6 +39,7 @@
 @import 'color';
 @import 'mediaquery';
 
+
 /*----- 3.0 mixins_extends -----*/
 //@import 'mixins_extends';
 
@@ -46,5 +47,11 @@
 @import 'base';
 
 /*----- 5.0 default -----*/
-@import 'default';
 
+
+@import 'default';
+@import 'header';
+@import 'slider';
+@import 'footer';
+@import 'component';
+@import 'aside';
