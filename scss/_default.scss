@@ -564,6 +564,8 @@
     justify-content: center;
     @include mq-down(sm) {
         width: 100%;
+        margin-bottom: 16px;
+        font-size: 12px;
     }
 }
 
@@ -599,7 +601,7 @@
     }
     @include mq-down(sm) {
         text-align: center;
-        font-size: 9px !important;
+        font-size: 9px;
     }
 }
 

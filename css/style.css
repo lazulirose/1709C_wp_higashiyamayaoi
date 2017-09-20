@@ -667,7 +667,9 @@ a:hover {
           justify-content: center; }
   @media screen and (max-width: 400px) {
     .footer-link {
-      width: 100%; } }
+      width: 100%;
+      margin-bottom: 16px;
+      font-size: 12px; } }
 
 .footer-link li {
   position: relative;
@@ -698,7 +700,7 @@ a:hover {
 @media screen and (max-width: 400px) {
   .copyright {
     text-align: center;
-    font-size: 9px !important; } }
+    font-size: 9px; } }
 
 .l-slider {
   width: 100%;
