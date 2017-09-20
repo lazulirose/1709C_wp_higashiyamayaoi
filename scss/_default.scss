@@ -4,7 +4,6 @@
     - contents(page unit)
 --------------------- */
 
-
 /* =====================
   layout(component)
 ===================== */
@@ -99,37 +98,6 @@
         padding: 0 5%;
     }
 }
-.shoparea {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background-color: $sub-color;
-    line-height: 1.8;
-    @include mq-up(md) {
-        width: 49%;
-        padding: 18px 0;
-        line-height: 1.5;
-        &+.shoparea {
-            margin-left: 2%;
-        }
-    }
-    @include mq-up(lg) {
-        width: 38%;
-        padding: 18px 0;
-        line-height: 1.8;
-    }
-    @include mq-down(sm) {
-        height: 150px;
-        padding: 18px;
-    }
-}
 .l-banner {
     display: -webkit-flex;
     display: -moz-flex;
@@ -145,7 +113,8 @@
     width: 100%;
 }
 
-.l-slider {
+.l-slider,
+.l-hero{
     width: 100%;
     display: block;
     margin: auto;
@@ -166,4 +135,4 @@
 //@import 'about';
 //@import 'news';
 //@import 'buy';
-//@import 'privacy';
+@import 'privacy';

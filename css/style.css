@@ -151,6 +151,8 @@ a {
   text-decoration: none; }
 
 span {
+  font-style: normal;
+  font-weight: bold;
   font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; }
 
 /*  Embedded content
@@ -264,6 +266,35 @@ a:hover {
               flex-direction: row;
       padding: 0 5%; } }
 
+.l-banner {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 36px; }
+
+.l-news {
+  width: 100%; }
+
+.l-slider,
+.l-hero {
+  width: 100%;
+  display: block;
+  margin: auto; }
+
+/* =====================
+  contents(page unit)
+===================== */
+/* =====================
+    index
+===================== */
 .shoparea {
   display: -moz-flex;
   display: -ms-flex;
@@ -300,34 +331,6 @@ a:hover {
       height: 150px;
       padding: 18px; } }
 
-.l-banner {
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: -webkit-box;
-  display: flex;
-  display: -ms-flexbox;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 36px; }
-
-.l-news {
-  width: 100%; }
-
-.l-slider {
-  width: 100%;
-  display: block;
-  margin: auto; }
-
-/* =====================
-  contents(page unit)
-===================== */
-/* =====================
-    index
-===================== */
 .shoparea-label {
   width: 25%;
   height: 65px;
@@ -441,6 +444,38 @@ a:hover {
       padding: 0; }
       .news-item:not(:last-child) {
         border-bottom: 0; } }
+
+/* =====================
+    privacy
+===================== */
+.privacy-content {
+  width: 100%;
+  padding: 0 5%; }
+  .privacy-content:first-child {
+    margin-top: 40px; }
+  .privacy-content:not(:last-child) {
+    margin-bottom: 40px; }
+  .privacy-content:last-child {
+    margin-bottom: 127px; }
+  @media screen and (min-width: 767px) {
+    .privacy-content {
+      padding: 0 10%; } }
+  @media screen and (min-width: 1199px) {
+    .privacy-content {
+      max-width: 900px;
+      padding: 0;
+      margin: auto; } }
+
+.privacy-headline {
+  font-weight: bold;
+  font-size: 16px; }
+
+.privacy-text {
+  padding: 24px;
+  line-height: 2.2; }
+  @media screen and (min-width: 767px) {
+    .privacy-text {
+      line-height: 2; } }
 
 /* =====================
   PC header
@@ -732,14 +767,23 @@ a:hover {
 /* =====================
   component
 ===================== */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+  .hero img {
+    width: 100%;
+    height: auto; }
+
 .title {
   position: relative;
   height: 200px;
   margin: 0 auto;
   text-align: center;
-  -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
-          writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
   font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
   font-weight: bold;
   font-size: 17px;
@@ -752,7 +796,17 @@ a:hover {
     right: -18px;
     height: 108px;
     width: 1px;
-    background-color: #000; }
+    background-color: #999; }
+
+.twolines {
+  height: 185px;
+  margin-bottom: 35px;
+  text-align: left !important;
+  padding: 50px 0 0 !important;
+  line-height: 1.5; }
+  .twolines::after {
+    right: -15px;
+    height: 145px; }
 
 .message {
   width: 95%;

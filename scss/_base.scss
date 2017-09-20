@@ -50,6 +50,8 @@ a {
 }
 
 span {
+    font-style: normal;
+    font-weight: bold;
     @include font-family("hiraginoG");
 }
 
