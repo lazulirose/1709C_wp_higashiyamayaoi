@@ -2,19 +2,22 @@
   common setting
 ===================== */
 
-* {box-sizing:border-box;}
+* {
+    box-sizing: border-box;
+}
+
 //
 //html {
 //  font-size: 13px;
 //  @include mq-up(md) {  font-size: 16px;  }
 //}
-
 body {
     position: relative;
-  width: 100%;
-  color: $base-text;
-  background: $main-color;
-  @include font-family("hiraginoG");
+    width: 100%;
+    overflow-x: hidden;
+    color: $base-text;
+    background: $main-color;
+    @include font-family("hiraginoG");
     font-size: 12px;
 }
 
@@ -24,29 +27,34 @@ body {
 /*  Heading content
 ------------------------*/
 
-h1,h2,h3,h4,h5,h6 {
-  font-weight: normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
 }
 
 
 /*  Phrasing content
 ------------------------*/
+
 li {
     list-style-type: none;
 }
+
 a {
     color: $base-text;
     text-decoration: none;
 }
-span {
- @include font-family("hiraginoG");
-}
 
+span {
+    @include font-family("hiraginoG");
+}
 
 //*  Interactive content
 //------------------------*/
-
-
 
 /*  Embedded content
 ------------------------*/
@@ -54,6 +62,7 @@ span {
 
 /*  hover
 ------------------------*/
+
 a:hover {
     opacity: .5;
     transition: .15s
