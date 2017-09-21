@@ -466,6 +466,105 @@ a:hover {
         border-bottom: 0; } }
 
 /* =====================
+    item
+===================== */
+.l-item {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: auto;
+  padding: 0 5%; }
+  @media screen and (min-width: 767px) {
+    .l-item {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 0 10%; } }
+
+.item__left {
+  width: 90%;
+  margin: 0 auto; }
+  .item__left img {
+    width: 100%;
+    display: block; }
+    .item__left img + img {
+      margin-top: 20px; }
+  @media screen and (min-width: 767px) {
+    .item__left {
+      width: 60%;
+      margin-right: 80px; }
+      .item__left img {
+        width: 420px;
+        height: 300px; }
+        .item__left img + img {
+          margin-top: 50px; } }
+
+.item__right {
+  width: 80%; }
+  @media screen and (min-width: 767px) {
+    .item__right {
+      width: 40%; } }
+
+.item-description {
+  padding: 0 6px;
+  margin-bottom: 60px; }
+  @media screen and (min-width: 767px) {
+    .item-description {
+      width: 480px; } }
+
+.item-price {
+  padding: 0 6px;
+  line-height: 1.9; }
+  .item-price span {
+    font-weight: normal;
+    font-size: 24px; }
+  @media screen and (min-width: 767px) {
+    .item-price {
+      width: 480px; } }
+
+.item-table {
+  max-width: 480px;
+  margin: 115px 0;
+  border-collapse: collapse;
+  line-height: 1.8;
+  font-size: 12px; }
+  .item-table tr {
+    height: 45px;
+    text-align: left;
+    border-bottom: solid 1px #666; }
+  .item-table th {
+    padding-left: 6px;
+    font-weight: normal; }
+  .item-table td {
+    padding: 6px; }
+  .item-table th,
+  .item-table td {
+    vertical-align: middle; }
+  @media screen and (min-width: 767px) {
+    .item-table {
+      width: 480px;
+      margin: 230px auto;
+      font-size: 12px; } }
+
+/* =====================
     about
 ===================== */
 .table {
