@@ -50,13 +50,13 @@
 }
 // red frame message
 .message {
-    width: 95%;
-    height: 120px;
+    width: 90%;
     margin: auto;
     padding: 12px 0;
     border: $red-2 solid 3px;
     text-align: center;
     line-height: 1.5;
+    vertical-align: middle;
     font-size: 13px;
     color: $red-2;
     span {
@@ -66,19 +66,13 @@
         font-weight: bold;
     }
     @include mq-up(md) {
-        height: 80px;
+        width: 80%;
         span {
             font-size: 23px;
-            font-weight: normal;
         }
     }
-    @include mq-up(lg) {
-        width: 65%;
-    }
     @include mq-down(sm) {
-        height: 200px;
-        padding: 16px;
-        line-height: 1.8;
+        padding: 8px;
     }
 }
 
