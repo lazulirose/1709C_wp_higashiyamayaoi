@@ -1,15 +1,6 @@
 /* =====================
     news
 ===================== */
-
-.l-news {
-    width: 80%;
-    margin: auto;
-    @include mq-up(md) {
-        width: 80%;
-    }
-}
-
 .news {
     display: -webkit-flex;
     display: -moz-flex;

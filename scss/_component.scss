@@ -180,3 +180,32 @@
         max-height: 40px;
     }
 }
+
+// item
+.item {
+        display: block;
+    img {
+        width: 100%;
+    }
+    @include mq-up(lg) {
+        width: 200px;
+        margin: auto;
+        img {
+            width: initial !important;
+        }
+    }
+}
+.item-title {
+    height: 40px;
+    line-height: 2.5;
+    font-size: 15px;
+}
+
+.focus {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    color: $red;
+}

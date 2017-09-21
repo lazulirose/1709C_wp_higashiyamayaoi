@@ -109,7 +109,7 @@
     justify-content: center;
     margin-bottom: 36px;
 }
-.l-news {
+.l-newsfeed {
     width: 100%;
 }
 
@@ -167,13 +167,24 @@
     }
 }
 // item end
+//news
+.l-news {
+    width: 80%;
+    margin: auto;
+    @include mq-up(md) {
+        width: 80%;
+    }
+}
+// news end
+
+
 /* =====================
   contents(page unit)
 ===================== */
 
 @import 'index';
 //@import 'committed';
-//@import 'item-standard';
+@import 'itemlist';
 //@import 'item-staple';
 //@import 'item-details';
 @import 'item';
