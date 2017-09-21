@@ -289,6 +289,26 @@ a:hover {
   display: block;
   margin: auto; }
 
+.l-buyflow {
+  width: 80%;
+  margin: 0 auto 26px;
+  border-bottom: solid 1px #666;
+  line-height: 2;
+  font-size: 13px; }
+
+.l-buyflow + .l-buyflow {
+  margin-bottom: 90px;
+  border: none; }
+
+.l-media {
+  margin: 35px auto 0; }
+
+.l-pagination {
+  width: 100%;
+  margin-top: 400px;
+  padding: 0 10%;
+  text-align: center; }
+
 /* =====================
   contents(page unit)
 ===================== */
@@ -492,12 +512,12 @@ a:hover {
   font-size: 16px; }
 
 .buy-heading + p,
-.square + p {
+.square.s-buy + p {
   width: 90%;
   margin: 0 auto 24px; }
   @media screen and (min-width: 767px) {
     .buy-heading + p,
-    .square + p {
+    .square.s-buy + p {
       width: 95%;
       margin: 0 auto 35px; } }
 
@@ -545,17 +565,6 @@ a:hover {
           -ms-flex-direction: row;
               flex-direction: row; } }
 
-.l-buyflow {
-  width: 80%;
-  margin: 0 auto 26px;
-  border-bottom: solid 1px #666;
-  line-height: 2;
-  font-size: 13px; }
-
-.l-buyflow + .l-buyflow {
-  margin-bottom: 90px;
-  border: none; }
-
 .contact__left {
   width: 100%; }
   .contact__left img {
@@ -602,15 +611,11 @@ a:hover {
   line-height: 1.8;
   color: #fff; }
 
-.square {
+.square.s-buy {
   width: 138px;
   height: 28px;
-  margin-bottom: 13px;
   background-color: #e60012;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  color: #fff; }
+  font-size: 16px; }
 
 /* =====================
     privacy
@@ -643,6 +648,44 @@ a:hover {
   @media screen and (min-width: 767px) {
     .privacy-text {
       line-height: 2; } }
+
+/* =====================
+    media
+===================== */
+.media {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5% 35px;
+  border-bottom: solid 1px #999;
+  color: #000; }
+  .media img {
+    width: 100%; }
+
+.square.s-media {
+  width: 100px;
+  height: 25px;
+  background-color: #999;
+  line-height: 2.5;
+  font-size: 11px; }
+
+.media-text {
+  line-height: 1.8; }
+  .media-text a {
+    color: #036eb8; }
 
 /* =====================
   PC header
@@ -975,6 +1018,19 @@ a:hover {
     right: -15px;
     height: 145px; }
 
+.subheading {
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: solid 5px #999;
+  font-size: 15px; }
+
+.square {
+  margin-bottom: 13px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff; }
+
 .message {
   width: 90%;
   margin: auto;
@@ -1025,6 +1081,53 @@ a:hover {
       margin-bottom: 17px; }
       .banner:nth-child(even) {
         margin-left: 1.8%; } }
+
+.pagination {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 30px auto;
+  height: 50px;
+  border: solid 1px #999;
+  border-right: none;
+  border-left: none;
+  letter-spacing: 16px;
+  font-size: 13px; }
+  @media screen and (min-width: 767px) {
+    .pagination {
+      width: 90%;
+      letter-spacing: 30px; } }
+  .pagination .prev {
+    margin-right: 5px; }
+    @media screen and (min-width: 767px) {
+      .pagination .prev {
+        margin-right: 50px; } }
+  .pagination .next {
+    margin-left: 5px; }
+    @media screen and (min-width: 767px) {
+      .pagination .next {
+        margin-left: 50px; } }
+  .pagination a {
+    color: #000; }
+
+.next-btn {
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 0; }
+  .next-btn img {
+    max-width: 550px;
+    max-height: 40px; }
 
 .link {
   display: -moz-flex;

@@ -68,7 +68,7 @@
   layout(other)
 ===================== */
 
-//index
+// index
 .l-description {
     width: 100%;
     margin: 16px auto;
@@ -119,8 +119,33 @@
     display: block;
     margin: auto;
 }
-//index end
+// index end
+// buy
+.l-buyflow {
+    width: 80%;
+    margin: 0 auto 26px;
+    border-bottom: solid 1px #666;
+    line-height: 2;
+    font-size: 13px;
+}
 
+.l-buyflow+.l-buyflow {
+    margin-bottom: 90px;
+    border: none;
+}
+// buy end
+// media
+.l-media {
+    margin: 35px auto 0;
+}
+
+.l-pagination {
+    width: 100%;
+    margin-top: 400px;
+    padding: 0 10%;
+    text-align: center;
+}
+// media
 
 /* =====================
   contents(page unit)
@@ -136,3 +161,4 @@
 //@import 'news';
 @import 'buy';
 @import 'privacy';
+@import 'media';

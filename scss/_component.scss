@@ -1,6 +1,7 @@
 /* =====================
   component
 ===================== */
+
 // hero
 .hero {
     width: 100%;
@@ -19,9 +20,9 @@
     height: 200px;
     margin: 0 auto;
     text-align: center;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
     @include font-family("hiraginoM");
     font-weight: bold;
     font-size: 17px;
@@ -37,17 +38,34 @@
         background-color: #999;
     }
 }
-.twolines{
+
+.twolines {
     height: 185px;
     margin-bottom: 35px;
     text-align: left !important;
     padding: 50px 0 0 !important;
     line-height: 1.5;
-        &::after {
+    &::after {
         right: -15px;
         height: 145px;
     }
 }
+
+.subheading {
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: solid 5px #999;
+    font-size: 15px;
+}
+
+.square {
+    margin-bottom: 13px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
 // red frame message
 .message {
     width: 90%;
@@ -111,5 +129,54 @@
         &:nth-child(even) {
             margin-left: 1.8%;
         }
+    }
+}
+
+// pagination
+.pagination {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px auto;
+    height: 50px;
+    border: solid 1px #999;
+    border-right: none;
+    border-left: none;
+    letter-spacing: 16px;
+    font-size: 13px;
+    @include mq-up(md) {
+        width: 90%;
+        letter-spacing: 30px;
+    }
+    .prev {
+        margin-right: 5px;
+        @include mq-up(md) {
+            margin-right: 50px;
+        }
+    }
+    .next {
+        margin-left: 5px;
+        @include mq-up(md) {
+            margin-left: 50px;
+        }
+    }
+    a {
+        color: #000;
+    }
+}
+
+.next-btn {
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    img {
+        max-width: 550px;
+        max-height: 40px;
     }
 }
