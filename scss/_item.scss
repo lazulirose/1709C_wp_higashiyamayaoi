@@ -2,26 +2,6 @@
     item
 ===================== */
 
-.l-item {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    padding: 0 5%;
-    @include mq-up(md) {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 10%;
-
-    }
-}
-
 .item__left {
     width: 90%;
     margin: 0 auto;
