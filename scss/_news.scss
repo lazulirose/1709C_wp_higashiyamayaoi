@@ -1,0 +1,53 @@
+/* =====================
+    news
+===================== */
+
+.l-news {
+    width: 80%;
+    margin: auto;
+    @include mq-up(md) {
+        width: 80%;
+    }
+}
+
+.news {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 25px;
+    border-bottom: solid 1px #999;
+    &:not(:first-child) {
+        margin-top: 25px;
+    }
+    .subheading {
+        margin: 20px 0;
+    }
+    @include mq-up(md) {
+        flex-direction: row;
+        .subheading {
+            margin: 0 auto 20px;
+        }
+    }
+}
+
+.news-img {
+    width: 100%;
+    margin: auto;
+    img {
+        width: 100%;
+    }
+    @include mq-up(md) {
+        width: 240px;
+        margin: 0;
+    }
+}
+
+.news-text {
+    @include mq-up(md) {
+        margin-left: 56px;
+    }
+}
