@@ -716,7 +716,10 @@ a:hover {
   display: inline-block;
   width: auto;
   margin: 0 16px 0 0;
-  font-size: 22px; }
+  font-size: 18px; }
+  @media screen and (min-width: 767px) {
+    .store-number {
+      font-size: 22px; } }
 
 .easymap {
   width: 90%;

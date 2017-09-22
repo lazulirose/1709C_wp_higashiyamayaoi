@@ -104,7 +104,11 @@
     display: inline-block;
     width: auto;
     margin: 0 16px 0 0;
+    font-size: 18px;
+    
+    @include mq-up(md) {
     font-size: 22px;
+}
 }
 .easymap {
     width: 90%;
