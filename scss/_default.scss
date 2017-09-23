@@ -4,6 +4,7 @@
     - contents(page unit)
 --------------------- */
 
+
 /* =====================
   layout(component)
 ===================== */
@@ -28,9 +29,11 @@
         margin-bottom: 0px;
     }
 }
+
 .l-links {
     margin-top: 65px;
 }
+
 .l-logo {
     width: 100%;
     margin: 68px auto 28px;
@@ -42,20 +45,25 @@
         text-align: center;
     }
 }
+
 .l-logo-row {
     text-align: center;
     text-align: -webkit-center;
 }
+
 .l-other {
     width: 100%;
     margin: auto;
+    background-color: #fff;
 }
+
 .pc-only {
     display: none;
     @include mq-up(md) {
         display: block;
     }
 }
+
 .sp-only {
     display: block;
     @include mq-up(md) {
@@ -84,6 +92,7 @@
         font-size: 12px;
     }
 }
+
 .l-shoparea {
     display: -webkit-flex;
     display: -moz-flex;
@@ -98,6 +107,18 @@
         padding: 0 5%;
     }
 }
+
+#parallax-hero + .l-banner .banner__inner {
+    width: 100%;
+    max-width: 900px;
+    margin: 140px auto 45px;
+}
+
+.l-recommend + .l-banner {
+    margin-bottom: 32px;
+    padding: 0;
+}
+
 .l-banner {
     display: -webkit-flex;
     display: -moz-flex;
@@ -107,18 +128,21 @@
     display: -ms-flexbox;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 36px;
+    max-width: 900px;
+    background-color: #fff;
 }
+
 .l-newsfeed {
     width: 100%;
 }
 
 .l-slider,
-.l-hero{
+.l-hero {
     width: 100%;
     display: block;
     margin: auto;
 }
+
 // index end
 // buy
 .l-buyflow {
@@ -133,6 +157,7 @@
     margin-bottom: 90px;
     border: none;
 }
+
 // buy end
 // media
 .l-media {
@@ -145,6 +170,7 @@
     padding: 0 10%;
     text-align: center;
 }
+
 // media end
 // item
 .l-item {
@@ -159,13 +185,13 @@
     margin: auto;
     padding: 0 5%;
     @include mq-up(md) {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 10%;
-
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 10%;
     }
 }
+
 // item end
 //news
 .l-news {
@@ -175,15 +201,15 @@
         width: 80%;
     }
 }
-// news end
 
+// news end
 
 /* =====================
   contents(page unit)
 ===================== */
 
 @import 'index';
-//@import 'committed';
+@import 'committed';
 @import 'itemlist';
 @import 'store';
 @import 'item';

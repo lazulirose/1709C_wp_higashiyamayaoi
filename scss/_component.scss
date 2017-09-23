@@ -119,7 +119,7 @@
 .banner {
     width: 100%;
     height: 150px;
-    background-color: #555;
+    background-color: #fff;
     @include mq-up(md) {
         width: 50%;
     }
