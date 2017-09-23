@@ -21,12 +21,12 @@ $.fn.autoChange = function (config) {
         function elementHeight() {
             $('#slider').css('height', windowH - logo - 60 + 'px');
         };
-        
         elementHeight();
         $(window).on('resize', function () {
             elementHight();
         });
         var change = function () {
+
             if (options.effect == 'fade') {
                 $(element[current]).fadeOut(options.speed);
                 $(element[next]).fadeIn(options.speed);
@@ -54,6 +54,33 @@ $.fn.autoChange = function (config) {
                 }
             }
         };
-      var timer = setInterval(function(){change();}, options.timeout);
+        var timer = setInterval(function () {
+            change();
+        }, options.timeout);
+        
+        
+        $('#next').click(function () {
+            if (current == 2) {
+                current = element.length - 1;
+                next = 0;
+            } else {
+                current += 1;
+            }
+            change(current);
+            //後の処理をキャンセルさせる処理？
+            return false;
+        });
+        $('#prev').click(function () {
+            if (current == 0) {
+                current = element.length + - 1;
+                next = 2;
+            } else {
+                current -= 1;
+            }
+            change(current);
+            //後の処理をキャンセルさせる処理？
+            return false;
+        });
+
     });
 };
