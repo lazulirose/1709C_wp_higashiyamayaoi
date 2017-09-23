@@ -12,47 +12,38 @@
   Text Domain: yaoi_wordpress
 */
 
-/*
-#overview 
-*/
- 
-/*#styleguide 
-```
-```
-*/
+///*--------------------
+//>>> TABLE OF CONTENTS:
+//----------------------
+//    1.0 reset
+//    2.0 common
+//    3.0 mixins_extends
+//    4.0 base
+//    5.0 styles
+//--------------------*/
 
+//*----- 1.0 reset -----*/
+@import 'common/reset';
 
-/*--------------------
->>> TABLE OF CONTENTS:
-----------------------
-    1.0 reset
-    2.0 fonts
-    3.0 mixins_extends
-    4.0 base
-    5.0 default
---------------------*/
+//*----- 2.0 common -----*/
+@import 'common/fonts';
+@import 'common/color';
+@import 'common/mediaquery';
 
-/*----- 1.0 reset -----*/
-@import 'reset';
-
-/*----- 2.0 fonts -----*/
-@import 'fonts';
-@import 'color';
-@import 'mediaquery';
-
-
-/*----- 3.0 mixins_extends -----*/
+//*----- 3.0 mixins_extends -----*/
 //@import 'mixins_extends';
 
-/*----- 4.0 base -----*/
-@import 'base';
-
-/*----- 5.0 default -----*/
+//*----- 4.0 base -----*/
+@import 'common/base';
 
 
-@import 'default';
-@import 'header';
-@import 'slider';
-@import 'footer';
-@import 'component';
-@import 'aside';
+//*----- 5.0 styles -----*/
+// include each styles
+@import 'common/default';
+
+// component part styles
+@import 'template/header';
+@import 'template/slider';
+@import 'template/footer';
+@import 'template/component';
+@import 'template/aside';

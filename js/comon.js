@@ -26,7 +26,26 @@ $.fn.autoChange = function (config) {
             elementHight();
         });
         var change = function () {
-
+            $('#next').click(function () {
+                if (current == 3) {
+                    current = element.length - 1;
+                    next = 0;
+                } else {
+                    current += 1;
+                }
+                change();
+                return false;
+            });
+            $('#prev').click(function () {
+                if (current == 0) {
+                    current = element.length - 1;
+                    next = 2;
+                } else {
+                    current -= 1;
+                }
+                change();
+                return false;
+            });
             if (options.effect == 'fade') {
                 $(element[current]).fadeOut(options.speed);
                 $(element[next]).fadeIn(options.speed);
@@ -57,30 +76,6 @@ $.fn.autoChange = function (config) {
         var timer = setInterval(function () {
             change();
         }, options.timeout);
-        
-        
-        $('#next').click(function () {
-            if (current == 2) {
-                current = element.length - 1;
-                next = 0;
-            } else {
-                current += 1;
-            }
-            change(current);
-            //後の処理をキャンセルさせる処理？
-            return false;
-        });
-        $('#prev').click(function () {
-            if (current == 0) {
-                current = element.length + - 1;
-                next = 2;
-            } else {
-                current -= 1;
-            }
-            change(current);
-            //後の処理をキャンセルさせる処理？
-            return false;
-        });
 
     });
 };
