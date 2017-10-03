@@ -5,7 +5,7 @@
         <h2 class="title">商品一覧</h2>
         <div class="container__inner">
             <div class="l-recommend l-itemlist">
-                <h3 class="subheading">定番商品</h3>
+                <h3 class="subheading">看板商品</h3>
                 <div class="itemlist">
                     <ul class="itemlist">
                         <?php $args = array('post_type' => 'main_item' );

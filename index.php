@@ -28,9 +28,11 @@
         <div class="l-recommend">
             <h2 class="title">おすすめ商品</h2>
             <ul class="recommend">
+
                 <?php $args = array(
-        'numberposts' => 8,
-        'post_type'   => 'recommended_item');
+        'numberposts' => 8,                //表示（取得）する記事の数
+        'post_type' => 'recommended_item'    //投稿タイプの指定
+    );
     $posts = get_posts( $args );
     if( $posts ) : foreach( $posts as $post ) : setup_postdata( $post ); ?>
                 <li class="recommend__inner">
@@ -41,6 +43,7 @@
                         </h3>
                         <p class="recommend-description">シャリっとした歯ざわりと<br>ほどよいわさびの風味がきいた<br>長いものお漬物です</p>
                         <?php endforeach; ?>
+
                         <?php else : ?>
                         <li>
                             <p>記事はまだありません。</p>
@@ -75,8 +78,8 @@
             <h2 class="title">新着情報</h2>
             <ul class="newsfeed__inner">
                 <?php $args = array(
-        'numberposts' => 8,
-        'post_type'   => 'news' 
+        'numberposts' => 8,                //表示（取得）する記事の数
+        'post_type' => 'news'    //投稿タイプの指定
     );
     $posts = get_posts( $args );
     if( $posts ) : foreach( $posts as $post ) : setup_postdata( $post ); ?>
@@ -86,15 +89,17 @@
                     <?php the_title();?>
                 </li>
                 <?php endforeach; ?>
+
                 <?php else : ?>
                 <li>
                     <p>お知らせはまだありません。</p>
                 </li>
                 <?php endif; wp_reset_postdata(); ?>
-            </ul>
+          </ul>
         </div>
     </div>
 </main>
 <!--main end-->
 <?php get_template_part('aside'); ?>
 <?php get_footer(); ?>
+

@@ -1,5 +1,10 @@
+<?php get_header(); ?>
+<main>
+    <?php get_template_part('logo'); ?>
+    <div class="container">
 <?php
 if (have_posts()) : while (have_posts()) : the_post();
+
 //singlebase
 //例えば下記のように、カテゴリによってdivのクラス名を変えたりできる
 //投稿がカテゴリ「1」に属していれば、CSSクラス"post-cat-one"のdivを、
@@ -21,3 +26,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 <?php endwhile; else: ?> //whileを終了し、投稿がないなら以下を表示
       <p>記事が見つかりませんでした。</p>
 <?php endif; ?>
+    </div>
+</main>
+<?php get_template_part('aside'); ?>
+<?php get_footer(); ?>
