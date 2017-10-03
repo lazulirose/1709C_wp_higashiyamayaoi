@@ -1,9 +1,10 @@
-/* ---------------------
-    - layout(component)
-    - layout(other)
-    - contents(page unit)
---------------------- */
-
+/*--------------------
+>>> TABLE OF CONTENTS:
+----------------------
+    layout(component)
+    layout(other)
+    contents(page unit)
+--------------------*/
 
 /* =====================
   layout(component)
@@ -45,18 +46,75 @@
         text-align: center;
     }
 }
-
+.l-slider,
+.l-hero {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
 .l-logo-row {
     text-align: center;
     text-align: -webkit-center;
 }
-
+.l-banner {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 900px;
+    background-color: #fff;
+}
 .l-other {
     width: 100%;
     margin: auto;
     background-color: #fff;
 }
-
+.l-pagination {
+    width: 100%;
+    margin-top: 400px;
+    padding: 0 10%;
+    text-align: center;
+}
+.l-item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 0 5%;
+    @include mq-up(md) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 10%;
+    }
+}
+.l-contact {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 10px auto 16px;
+    padding: 30px 0;
+    border-bottom: solid 1px #666;
+    line-height: 2;
+    font-size: 13px;
+    @include mq-up(md) {
+        flex-direction: row;
+    }
+}
 .pc-only {
     display: none;
     @include mq-up(md) {
@@ -70,7 +128,6 @@
         display: none;
     }
 }
-
 
 /* =====================
   layout(other)
@@ -92,7 +149,6 @@
         font-size: 12px;
     }
 }
-
 .l-shoparea {
     display: -webkit-flex;
     display: -moz-flex;
@@ -115,32 +171,12 @@
 }
 
 .l-recommend + .l-banner {
-    margin-bottom: 32px;
+    margin: 0 auto 32px;
     padding: 0;
-}
-
-.l-banner {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    display: -ms-flexbox;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 900px;
-    background-color: #fff;
 }
 
 .l-newsfeed {
     width: 100%;
-}
-
-.l-slider,
-.l-hero {
-    width: 100%;
-    display: block;
-    margin: auto;
 }
 
 // index end
@@ -157,43 +193,14 @@
     margin-bottom: 90px;
     border: none;
 }
-
 // buy end
 // media
 .l-media {
     margin: 35px auto 0;
 }
 
-.l-pagination {
-    width: 100%;
-    margin-top: 400px;
-    padding: 0 10%;
-    text-align: center;
-}
-
 // media end
-// item
-.l-item {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    padding: 0 5%;
-    @include mq-up(md) {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 0 10%;
-    }
-}
-
-// item end
-//news
+// news
 .l-news {
     width: 80%;
     margin: auto;
@@ -201,20 +208,27 @@
         width: 80%;
     }
 }
-
 // news end
-
+// store
+.l-store {
+    width: 90%;
+    margin: auto;
+    @include mq-up(md){
+        width: 100%;
+    }
+}
+// end store
 /* =====================
   contents(page unit)
 ===================== */
 
-@import 'index';
-@import 'committed';
-@import 'itemlist';
-@import 'store';
-@import 'item';
-@import 'about';
-@import 'news';
-@import 'buy';
-@import 'privacy';
-@import 'media';
+@import '../page/index';
+@import '../page/committed';
+@import '../page/itemlist';
+@import '../page/store';
+@import '../page/item';
+@import '../page/about';
+@import '../page/news';
+@import '../page/buy';
+@import '../page/privacy';
+@import '../page/media';

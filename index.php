@@ -43,12 +43,12 @@
                         </h3>
                         <p class="recommend-description">シャリっとした歯ざわりと<br>ほどよいわさびの風味がきいた<br>長いものお漬物です</p>
                         <?php endforeach; ?>
-                        <?php else : //記事が無い場合 ?>
+
+                        <?php else : ?>
                         <li>
                             <p>記事はまだありません。</p>
                         </li>
-                        <?php endif;
-    wp_reset_postdata(); //クエリのリセット ?>
+                        <?php endif; wp_reset_postdata(); ?>
                         <li class="recommend__inner">
                             <a href="" class="recommend-item item">
                                 <img src="https://placehold.jp/200x150.png" alt="">
@@ -89,16 +89,17 @@
                     <?php the_title();?>
                 </li>
                 <?php endforeach; ?>
-                <?php else : //記事が無い場合 ?>
+
+                <?php else : ?>
                 <li>
-                    <p>記事はまだありません。</p>
+                    <p>お知らせはまだありません。</p>
                 </li>
-                <?php endif;
-    wp_reset_postdata(); //クエリのリセット ?>
-            </ul>
+                <?php endif; wp_reset_postdata(); ?>
+          </ul>
         </div>
     </div>
 </main>
 <!--main end-->
 <?php get_template_part('aside'); ?>
 <?php get_footer(); ?>
+

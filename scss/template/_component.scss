@@ -13,7 +13,7 @@
         height: auto;
     }
 }
-
+// hero end
 // hading
 .title {
     position: relative;
@@ -50,7 +50,8 @@
         height: 145px;
     }
 }
-
+// hading end
+// subheading
 .subheading {
     width: 100%;
     padding: 20px;
@@ -58,14 +59,7 @@
     border-left: solid 5px #999;
     font-size: 15px;
 }
-
-.square {
-    margin-bottom: 13px;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
-}
-
+// subheading end
 // red frame message
 .message {
     width: 90%;
@@ -93,7 +87,7 @@
         padding: 8px;
     }
 }
-
+// red frame message end
 // pdf btn
 .pdf-dl {
     width: 100%;
@@ -111,10 +105,7 @@
         }
     }
 }
-
-// item base
-.item {}
-
+// pdf btn end
 // banner
 .banner {
     width: 100%;
@@ -131,7 +122,7 @@
         }
     }
 }
-
+// banner end
 // pagination
 .pagination {
     display: -webkit-flex;
@@ -169,7 +160,6 @@
         color: #000;
     }
 }
-
 .next-btn {
     display: block;
     width: 80%;
@@ -180,7 +170,7 @@
         max-height: 40px;
     }
 }
-
+// pagination end
 // item
 .item {
         display: block;
@@ -200,7 +190,6 @@
     line-height: 2.5;
     font-size: 15px;
 }
-
 .focus {
     display: block;
     width: 100%;
@@ -209,7 +198,8 @@
     font-size: 12px;
     color: $red;
 }
-
+// item end
+// circle
 .circle {
     display: inline-block;
     width: 90px;
@@ -221,3 +211,18 @@
     line-height: 1.8;
     color: #fff;
 }
+// circle end
+// square
+.square {
+    margin-bottom: 13px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+// square end
+// receptiontime
+.receptiontime {
+    display: inline-block;
+    font-size: 12px;
+}
+// receptiontime end

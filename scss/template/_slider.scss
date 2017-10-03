@@ -51,7 +51,6 @@
 
 #prev:before,
 #next:before {
-    /*白い丸 */
     display: block;
     content: "";
     position: absolute;
@@ -73,7 +72,6 @@
 
 #prev:after,
 #next:after {
-    /*「after要素」で三角 */
     display: block;
     content: "";
     position: absolute;
