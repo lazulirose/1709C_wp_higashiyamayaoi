@@ -1,5 +1,5 @@
 $.fn.autoChange = function (config) {
-    var options = $.extend({
+      var options = $.extend({
         effect: 'fade',
         type: 'repaet',
         timeout: 3000,
@@ -11,7 +11,7 @@ $.fn.autoChange = function (config) {
         var next = 1;
         var elementP = $(this);
         var element = $(elementP).children();
-
+        
         var windowH = $(window).height();
         var logo = $('#hero-logo').height();
 

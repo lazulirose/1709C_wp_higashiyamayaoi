@@ -2,14 +2,12 @@
 
 /*
   Theme Name: 東山 八百伊
-  Theme URI: 
-  Author: 
+  Description: -
+  Theme URI: -
+  Author: Aruku
   Author URI: 
-  Description: Description
   Version: 1.0.0
-  License:
-  License URI:
-  Text Domain: yaoi_wordpress
+  License: Don't use.
 */
 
 ///*--------------------
@@ -24,26 +22,20 @@
 
 //*----- 1.0 reset -----*/
 @import 'common/reset';
-
 //*----- 2.0 common -----*/
 @import 'common/fonts';
 @import 'common/color';
 @import 'common/mediaquery';
-
 //*----- 3.0 mixins_extends -----*/
 //@import 'mixins_extends';
-
 //*----- 4.0 base -----*/
 @import 'common/base';
-
-
 //*----- 5.0 styles -----*/
-// include each styles
-@import 'common/default';
-
 // component part styles
 @import 'template/header';
 @import 'template/slider';
 @import 'template/footer';
-@import 'template/component';
 @import 'template/aside';
+@import 'template/component';
+// include each styles
+@import 'common/default';
