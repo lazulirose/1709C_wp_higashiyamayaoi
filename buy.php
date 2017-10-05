@@ -27,8 +27,8 @@ Template Name: buy
             </div>
             <div class="l-contact">
                 <div class="contact__left">
-                    <img src="https://placehold.jp/200x180.png" alt="">
-                    <img src="https://placehold.jp/200x120.png" alt="">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/dist/buy-1.jpg" alt="">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/dist/buy-2.jpg" alt="">
                 </div>
                 <div class="contact__right">
                     <p class="buy-heading">■ 本店へご注文の場合</p>
@@ -36,7 +36,7 @@ Template Name: buy
                     <p class="receptiontime"><span class="circle">受付時間</span>　午前9時～午後5時30分</p>
                     <p class="contact-number">FAX （075）561-4682</p>
                     <p class="">下記のご注文用ＦＡＸ用紙をプリントしてご利用ください。　</p>
-                    <a href="" class="pdf-dl"><img src="./img/pdf.png" alt="FAX用のプリントアウトデータはこちら"></a>
+                    <a href="" class="pdf-dl"><img src="<?php bloginfo('template_directory'); ?>/img/dist/pdf-dl.svg" alt="FAX用のプリントアウトデータはこちら"></a>
                     <p class="">注文はお手紙でも受け付けております。お手紙の宛先は下記までお願いいたします。</p>
                     <p class="address"><span>〒605-0812<br>京都市東山区東大路松原上ル4丁目毘沙門町44<br>東山 八百伊　宛</span></p>
                     <p class="buy-heading">■ 高台寺の直営店舗でもご注文を受け付けております。</p>

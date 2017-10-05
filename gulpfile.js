@@ -39,7 +39,7 @@ gulp.task("scss", function() {
         .pipe(plumber())
         .pipe(scss())
         .pipe(autoprefixer())
-        .pipe(gulp.dest("./css"))
+        .pipe(gulp.dest("./"))
         .pipe(browser.reload({stream:true}))
 });
 

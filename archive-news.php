@@ -7,7 +7,7 @@ Template Name: お知らせ
         <?php get_template_part('logo'); ?>
         <div class="l-hero">
             <div id="hero" class="hero">
-        <img src="<?php bloginfo('template_directory'); ?>/img/dist/news-hero" alt="news-hero">
+        <img src="<?php bloginfo('template_directory'); ?>/img/dist/news-hero.jpg" alt="news-hero">
             </div>
         </div>
         <div class="container">
@@ -20,7 +20,7 @@ Template Name: お知らせ
 			'paged'          => $paged,
 			'orderby'        => 'post_date',
 			'order'          => 'DESC',
-			'post_type'      => 'media',
+			'post_type'      => 'news',
 			'post_status'    => 'publish'
 		);
 		$the_query = new WP_Query($args);
@@ -32,9 +32,18 @@ Template Name: お知らせ
 		wp_reset_postdata();
 		?>
             </div>
-            <div id="pagination">
-            <?php get_template_part('pagination'); ?>
-            </div>
+
+<?php
+    $big = 9999999999;
+    $arg = array(
+        'prev_text' => __('◀'),
+        'next_text' => __('▶'),          
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'current' => max( 1, get_query_var('paged') ),
+        'total'   => $wp_query->max_num_pages
+    );
+    echo paginate_links($arg);
+?>
         </div>
     </main>
     <!--main end-->

@@ -17,6 +17,6 @@
         <div class="message">
             <p><span>ご注文は、店舗または、電話・FAX<br class="sp-only">お手紙でお願いしております。</span>現在ホームページやメールからの注文は受け付けておりません。<br class="sp-only">ご不便をおかけいたしますがご了承ください。</p>
         </div>
-        <a href="" class="pdf-dl"><img src="<?php echo get_template_directory_uri(); ?>/img/pdf.png" alt="FAX用のプリントアウトデータはこちら"></a>
+        <a href="" class="pdf-dl"><img src="<?php echo get_template_directory_uri(); ?>/img/dist/pdf-dl.svg" alt="FAX用のプリントアウトデータはこちら"></a>
     </div>
 </div>

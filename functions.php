@@ -116,35 +116,52 @@ function responsive_pagination($pages = '', $range = 4){
     echo '</ul>';
   }
 }
-
-function bmPageNavi() {
-  global $wp_rewrite;
-  global $wp_query;
-  global $paged;
-    
-    $total = $wp_query->max_num_pages;
-    $paginate_base = get_pagenum_link(1);
-    
-  if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
-    $paginate_format = '';
-    $paginate_base = add_query_arg('page', '%#%');
-  } else {
-    $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .
-    untrailingslashit('?page=%#%', 'paged');;
-    $paginate_base .= '%_%';  
-  }
- 
-  $result = paginate_links( array(
-    'prev_text' => __('◀'),
-    'next_text' => __('▶'),   
-    'base' => $paginate_base,
-    'format' => $paginate_format,
-    'total' => $wp_query->max_num_pages,
-    'mid_size' => 5,
-    'current' => ($paged ? $paged : 1),
-  ));
-  return $result;   
+function post_thumbs_gallery($max='-1', $size='thumbnail'){
+    global $post;
+    $args = array(
+        'post_type' => 'attachment',
+        'numberposts' => $max,
+        'post_status' => inherit,
+        'post_parent' => $post->ID,
+        'post_mime_type' => 'image',
+        'orderby' => 'menu_order ID',
+    );
+    $attachments = get_posts($args);
+    if (is_array($attachments)) {
+        foreach ($attachments as $attachment) {
+           echo '<a href="'.$attachment->guid.'" title="'.$attachment->post_title.'">'.wp_get_attachment_image($attachment->ID,$size)."</a>";
+        }
+    }
 }
+//
+//function bmPageNavi() {
+//  global $wp_rewrite;
+//  global $wp_query;
+//  global $paged;
+//    
+//    $total = $wp_query->max_num_pages;
+//    $paginate_base = get_pagenum_link(1);
+//    
+//  if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
+//    $paginate_format = '';
+//    $paginate_base = add_query_arg('page', '%#%');
+//  } else {
+//    $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .
+//    untrailingslashit('?page=%#%', 'paged');;
+//    $paginate_base .= '%_%';  
+//  }
+// 
+//  $result = paginate_links( array(
+//    'prev_text' => __('◀'),
+//    'next_text' => __('▶'),   
+//    'base' => $paginate_base,
+//    'format' => $paginate_format,
+//    'total' => $wp_query->max_num_pages,
+//    'mid_size' => 5,
+//    'current' => ($paged ? $paged : 1),
+//  ));
+//  return $result;   
+//}
 
 function news_post_type() {
     register_post_type( 'news',

@@ -15,13 +15,13 @@
             <div class="shoparea">
                 <p class="shoparea-label">本　　店：</p>
                 <p class="shoparea-address">京都市東山区東大路松原上ル4丁目毘沙門町44<br>
-                    <a href="">	&#x25B6; 詳しい地図</a><br> TEL(075)525-0801　FAX(075)561-4682
+                    <a href="<?php echo home_url('/store#honten'); ?>">	&#x25B6; 詳しい地図</a><br> TEL(075)525-0801　FAX(075)561-4682
                 </p>
             </div>
             <div class="shoparea">
                 <p class="shoparea-label">高台寺店：</p>
                 <p class="shoparea-address">京都市東山区高台寺下河原町530<br>
-                    <a href="">	&#x25B6; 詳しい地図</a><br> TEL(075)551-5311
+                    <a href="<?php echo home_url('/store#koudaiji'); ?>">	&#x25B6; 詳しい地図</a><br> TEL(075)551-5311
                 </p>
             </div>
         </div>
@@ -41,28 +41,22 @@
                         <h3 class="item-title" itemprop="name">
                             <?php the_title(); ?>
                         </h3>
-                        <p class="recommend-description">シャリっとした歯ざわりと<br>ほどよいわさびの風味がきいた<br>長いものお漬物です</p>
-                        <?php endforeach; ?>
-                        <?php else : //記事が無い場合 ?>
-                        <li>
-                            <p>記事はまだありません。</p>
-                        </li>
-                        <?php endif;
-    wp_reset_postdata(); //クエリのリセット ?>
-                        <li class="recommend__inner">
-                            <a href="" class="recommend-item item">
-                                <img src="https://placehold.jp/200x150.png" alt="">
-                                <h3 class="item-title">山のいもわさび風味</h3>
-                                <p class="recommend-description">シャリっとした歯ざわりと<br>ほどよいわさびの風味がきいた<br>長いものお漬物です</p>
-                            </a>
-                        </li>
-                        <li class="recommend__inner">
-                            <a href="" class="recommend-item item">
-                                <img src="https://placehold.jp/200x150.png" alt="">
-                                <h3 class="item-title">山のいもわさび風味</h3>
-                                <p class="recommend-description">シャリっとした歯ざわりと<br>ほどよいわさびの風味がきいた<br>長いものお漬物です</p>
-                            </a>
-                        </li>
+                        <div class="recommend-description">
+                            <?php the_content(); ?>
+                            <?php if ( get_post_meta($post->ID,'remarks',true ) ) {
+    
+    echo '<p class="focus">'; 
+    echo get_post_meta($post->ID,'remarks',true );
+    echo '</p>';
+} ?>
+                        </div>
+                    </a>
+                    <?php endforeach; ?>
+                    <?php else : //記事が無い場合 ?>
+                    <li>
+                        <p>記事はまだありません。</p>
+                    </li>
+                    <?php endif; wp_reset_postdata();?>
             </ul>
         </div>
         <?php get_template_part('banner'); ?>
@@ -70,7 +64,7 @@
             <h2 class="title">新着情報</h2>
             <ul class="newsfeed__inner">
                 <?php $args = array(
-        'numberposts' => 8,                //表示（取得）する記事の数
+        'numberposts' => 6,                //表示（取得）する記事の数
         'post_type' => 'news'    //投稿タイプの指定
     );
     $posts = get_posts( $args );

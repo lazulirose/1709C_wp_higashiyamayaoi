@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 商品登録
+Template Name: おすすめ商品
 */
 ?>
     <?php get_header(); ?>

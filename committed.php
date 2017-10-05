@@ -20,7 +20,7 @@ Template Name: committed
                         <div class="block__inner">
                             <div class="block__left">
                                 <h2>東山八百伊のご紹介</h2>
-                                <img src="https://placehold.jp/370x370.png" alt="">
+                                <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-about.jpg" alt="committed">
                             </div>
                             <div class="block__right">
                                 <p>京都のお漬けものは、なぜこんなにおいしいのですかと、よくおたずねをうけます。</p>
@@ -57,7 +57,7 @@ Template Name: committed
                 </section>
 
                 <section>
-                    <div class="right effect shadow">
+                    <div class="right effect">
                         <div class="effect__inner shadow">
                             <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-2.jpg" alt="committed" class="effect shadow">
                             <p class="text susai effect-slow right-slow">
@@ -68,9 +68,9 @@ Template Name: committed
                     </div>
                 </section>
                 <section>
-                    <div class="left effect shadow">
-                        <div class="effect__inner">
-                            <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-3.jpg" alt="committed" class="effect shadow">
+                    <div class="left effect">
+                        <div class="effect__inner shadow">
+                            <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-3.jpg" alt="committed" class="effect">
                             <p class="text fresh effect-slow left-slow">
                                 <span>新鮮さ</span> 「樽から出したての新鮮なお漬け物をお届けしたい」 野菜の新鮮さにこだわっているので、大量に漬け込んだり、保存料や着色料を使用せず、毎日必要な分だけ漬けています。
                             </p>
@@ -79,9 +79,9 @@ Template Name: committed
                     </div>
                 </section>
             </div>
-            <?php get_template_part('banner'); ?>
         </div>
     </main>
+    <?php get_template_part('banner'); ?>
     <!--main end-->
     <?php get_template_part('aside'); ?>
 <?php get_footer(); ?>
