@@ -28,23 +28,11 @@
         <div class="l-recommend">
             <h2 class="title">おすすめ商品</h2>
             <ul class="recommend">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
 
                 <?php $args = array(
         'numberposts' => 8,                //表示（取得）する記事の数
         'post_type' => 'recommended_item'    //投稿タイプの指定
     );
-<<<<<<< HEAD
-=======
-                <?php $args = array(
-        'numberposts' => 8,
-        'post_type'   => 'recommended_item');
->>>>>>> master
-=======
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
     $posts = get_posts( $args );
     if( $posts ) : foreach( $posts as $post ) : setup_postdata( $post ); ?>
                 <li class="recommend__inner">
@@ -55,27 +43,12 @@
                         </h3>
                         <p class="recommend-description">シャリっとした歯ざわりと<br>ほどよいわさびの風味がきいた<br>長いものお漬物です</p>
                         <?php endforeach; ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <?php else : //記事が無い場合 ?>
                         <li>
                             <p>記事はまだありません。</p>
                         </li>
                         <?php endif;
     wp_reset_postdata(); //クエリのリセット ?>
-=======
-=======
-
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
-                        <?php else : ?>
-                        <li>
-                            <p>記事はまだありません。</p>
-                        </li>
-                        <?php endif; wp_reset_postdata(); ?>
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
                         <li class="recommend__inner">
                             <a href="" class="recommend-item item">
                                 <img src="https://placehold.jp/200x150.png" alt="">
@@ -93,30 +66,12 @@
             </ul>
         </div>
         <?php get_template_part('banner'); ?>
-        <div class="l-other">
-            <div class="other">
-                <div class="message">
-                    <p><span>ご注文は、店舗または、電話・FAX<br class="sp-only">お手紙でお願いしております。</span>現在ホームページやメールからの注文は受け付けておりません。<br class="sp-only">ご不便をおかけいたしますがご了承ください。</p>
-                </div>
-                <a href="" class="pdf-dl"><img src="<?php echo get_template_directory_uri(); ?>/img/pdf.png" alt="FAX用のプリントアウトデータはこちら"></a>
-            </div>
-        </div>
         <div class="l-newsfeed">
             <h2 class="title">新着情報</h2>
             <ul class="newsfeed__inner">
                 <?php $args = array(
-<<<<<<< HEAD
-<<<<<<< HEAD
         'numberposts' => 8,                //表示（取得）する記事の数
         'post_type' => 'news'    //投稿タイプの指定
-=======
-        'numberposts' => 8,
-        'post_type'   => 'news' 
->>>>>>> master
-=======
-        'numberposts' => 8,                //表示（取得）する記事の数
-        'post_type' => 'news'    //投稿タイプの指定
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
     );
     $posts = get_posts( $args );
     if( $posts ) : foreach( $posts as $post ) : setup_postdata( $post ); ?>
@@ -126,41 +81,16 @@
                     <?php the_title();?>
                 </li>
                 <?php endforeach; ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <?php else : //記事が無い場合 ?>
                 <li>
                     <p>記事はまだありません。</p>
                 </li>
                 <?php endif;
     wp_reset_postdata(); //クエリのリセット ?>
-=======
-=======
-
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
-                <?php else : ?>
-                <li>
-                    <p>お知らせはまだありません。</p>
-                </li>
-                <?php endif; wp_reset_postdata(); ?>
-<<<<<<< HEAD
->>>>>>> master
             </ul>
-=======
-          </ul>
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
         </div>
     </div>
 </main>
 <!--main end-->
 <?php get_template_part('aside'); ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <?php get_footer(); ?>
-=======
-<?php get_footer(); ?>
->>>>>>> master
-=======
-<?php get_footer(); ?>
-
->>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7

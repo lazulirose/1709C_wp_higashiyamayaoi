@@ -3,12 +3,12 @@
 Template Name: privacy
 */
 ?>
-<?php get_header(); ?>
-<main>
-<?php get_template_part('logo'); ?>
+    <?php get_header(); ?>
+    <main>
+        <?php get_template_part('logo'); ?>
         <div class="l-hero">
             <div id="hero" class="hero">
-                <img src="https://placehold.jp/350x150.png" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/dist/privacy-hero.jpg" alt="privacy-hero">
             </div>
         </div>
         <div class="container">
@@ -63,5 +63,5 @@ Template Name: privacy
         </div>
     </main>
     <!--main end-->
-<?php get_template_part('aside'); ?>
-<?php get_footer(); ?>
+    <?php get_template_part('aside'); ?>
+    <?php get_footer(); ?>

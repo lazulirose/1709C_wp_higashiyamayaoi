@@ -3,12 +3,11 @@
 Template Name: media
 */
  get_header(); ?>
-
     <main>
         <?php get_template_part('logo'); ?>
         <div class="l-hero">
             <div id="hero" class="hero">
-                <img src="https://placehold.jp/350x150.png" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/dist/media-hero" alt="media-hero">
             </div>
         </div>
         <div class="container">
@@ -30,30 +29,9 @@ Template Name: media
 			endwhile;
 		endif;
 		wp_reset_postdata();
-		?>
-<?php
-$param = array(
-    'posts_per_page' => 2,
-    'paged'          => $paged,
-    'post_type'      => 'media',
-    'orderby'        => 'post_date',
-    'order'          => 'DESC'
-);
-$wp_query->query($param); ?>
-   
- <?php if ( $wp_query->have_posts() ) : ?>
-        <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
- <?php endwhile; ?>
-    <?php endif; ?>
-<?php echo bmPageNavi(); // ページネーション出力
-//echo '<div class="l-pagination">
-//            <a href="' .get_pagenum_link($paged_s - 1) .'" class="next-btn"><img src="./img/next-btn.svg" alt="">>>></a>"';
-//printf('<a href="">%1$s</a>', $total);
-$wp_query = null; 
-$wp_query = $temp;
-?>        
-           
-            </div>
+		?>        
+        <?php get_template_part('pagination'); ?>
+        </div>
     </main>
     <!--main end-->
     <?php get_template_part('aside'); ?>

@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Name: 商品一覧　template
- * Template Post Type: aw_item, assorted_item
+ * Template Name: 商品一覧
  */
 get_header(); ?>
     <main>

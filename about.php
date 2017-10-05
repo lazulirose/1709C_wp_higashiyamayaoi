@@ -8,7 +8,7 @@ Template Name: about
         <?php get_template_part('logo'); ?>
         <div class="l-hero">
             <div id="hero" class="hero">
-                <img src="https://placehold.jp/350x150.png" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/dist/about-hero" alt="about-hero">
             </div>
         </div>
         <div class="container">
