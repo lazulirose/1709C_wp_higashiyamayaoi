@@ -66,6 +66,7 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 900px;
+        margin: auto;
     background-color: #fff;
 }
 .l-other {
@@ -113,6 +114,7 @@
     font-size: 13px;
     @include mq-up(md) {
         flex-direction: row;
+        align-items: flex-start;
     }
 }
 .pc-only {
@@ -222,6 +224,11 @@
   contents(page unit)
 ===================== */
 
+.l-page {
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+}
 @import '../page/index';
 @import '../page/committed';
 @import '../page/itemlist';

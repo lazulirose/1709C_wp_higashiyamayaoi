@@ -7,6 +7,7 @@
     margin: 0 auto;
     img {
         width: 100%;
+        height: inherit;
         display: block;
          &+img {
                 margin-top: 20px;

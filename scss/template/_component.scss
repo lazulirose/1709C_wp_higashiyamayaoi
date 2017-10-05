@@ -13,6 +13,7 @@
         height: auto;
     }
 }
+
 // hero end
 // hading
 .title {
@@ -50,6 +51,7 @@
         height: 145px;
     }
 }
+
 // hading end
 // subheading
 .subheading {
@@ -59,6 +61,7 @@
     border-left: solid 5px #999;
     font-size: 15px;
 }
+
 // subheading end
 // red frame message
 .message {
@@ -87,6 +90,7 @@
         padding: 8px;
     }
 }
+
 // red frame message end
 // pdf btn
 .pdf-dl {
@@ -97,31 +101,33 @@
     text-align: center;
     img {
         width: 100%;
+        max-width: 600px !important;
         text-align: center;
     }
-    @include mq-up(md) {
-        img {
-            width: initial !important;
-        }
-    }
 }
+
 // pdf btn end
 // banner
 .banner {
-    width: 100%;
-    height: 150px;
+    width: 50%;
+    max-height: 150px;
     background-color: #fff;
-    @include mq-up(md) {
-        width: 50%;
-    }
+    text-align: center;
+    img {
+        width: 100%;
+        max-width: 440px;
+        max-height: 150px;
+    }    
     @include mq-up(lg) {
         width: 440px;
         margin-bottom: 17px;
+        text-align: left;
         &:nth-child(even) {
             margin-left: 1.8%;
         }
     }
 }
+
 // banner end
 // pagination
 .pagination {
@@ -160,36 +166,44 @@
         color: #000;
     }
 }
+
 .next-btn {
     display: block;
     width: 80%;
-    margin: auto;
+    margin: 24px auto 0;
     padding: 0;
+    text-align: center;
     img {
         max-width: 550px;
         max-height: 40px;
     }
 }
+
 // pagination end
 // item
 .item {
-        display: block;
+    display: block;
     img {
         width: 100%;
+        max-height: 300px;
     }
     @include mq-up(lg) {
         width: 200px;
         margin: auto;
         img {
             width: initial !important;
+            max-width: 200px;
+            max-height: 150px;
         }
     }
 }
+
 .item-title {
     height: 40px;
     line-height: 2.5;
     font-size: 15px;
 }
+
 .focus {
     display: block;
     width: 100%;
@@ -198,6 +212,7 @@
     font-size: 12px;
     color: $red;
 }
+
 // item end
 // circle
 .circle {
@@ -211,6 +226,7 @@
     line-height: 1.8;
     color: #fff;
 }
+
 // circle end
 // square
 .square {
@@ -219,10 +235,19 @@
     font-weight: bold;
     color: #fff;
 }
+
 // square end
 // receptiontime
 .receptiontime {
     display: inline-block;
     font-size: 12px;
 }
+
 // receptiontime end
+
+.link-item:hover {
+    opacity: .45;
+}
+a:hover img {
+  opacity: .45;  
+}
