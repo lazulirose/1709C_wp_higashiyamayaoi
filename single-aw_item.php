@@ -59,9 +59,12 @@
             </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <!-- end of .events_contents -->
 >>>>>>> master
+=======
+>>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
         <?php endwhile; endif; ?>
     </div>
 <?php get_template_part('aside'); ?>

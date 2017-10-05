@@ -6,10 +6,14 @@
         <div class="container__inner">
             <div class="l-recommend l-itemlist">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <h3 class="subheading">看板商品</h3>
 =======
                 <h3 class="subheading">定番商品</h3>
 >>>>>>> master
+=======
+                <h3 class="subheading">看板商品</h3>
+>>>>>>> 38871e0fbb628bf3d6fc94875bf3363ca6bccff7
                 <div class="itemlist">
                     <ul class="itemlist">
                         <?php $args = array('post_type' => 'main_item' );
