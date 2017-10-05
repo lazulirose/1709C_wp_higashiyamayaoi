@@ -58,6 +58,10 @@
                 </table>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+        <!-- end of .events_contents -->
+>>>>>>> master
         <?php endwhile; endif; ?>
     </div>
 <?php get_template_part('aside'); ?>

@@ -67,6 +67,56 @@ function home_posts_type( $wp_query ) {
     }
 }
 
+add_filter('redirect_canonical','my_disable_redirect_canonical');
+function my_disable_redirect_canonical( $redirect_url ) {
+	if ( is_archive( ) ){
+		$subject = $redirect_url;
+		$pattern = '/\/page\//';
+		preg_match($pattern, $subject, $matches);
+
+		if ($matches){
+		$redirect_url = false;
+		return $redirect_url;
+		}
+	}
+
+}
+//ページネーション
+function responsive_pagination($pages = '', $range = 4){
+  $showitems = ($range * 2)+1;
+ 
+  global $paged;
+  if(empty($paged)) $paged = 1;
+ 
+  //ページ情報の取得
+  if($pages == '') {
+    global $wp_query;
+    $pages = $wp_query->max_num_pages;
+    if(!$pages){
+      $pages = 1;
+    }
+  }
+ 
+  if(1 != $pages) {
+    echo '<ul class="pagination">';
+    //先頭戻るボタン
+    echo '<li class="waves-effect"><a href="'.get_pagenum_link(1).'"><i class="material-icons">first_page</i></li>';
+    //1つ戻るボタン
+    echo '<li class="waves-effect"><a href="'.get_pagenum_link($paged - 1).'"><i class="material-icons">chevron_left</i></a></li>';
+    //番号つきページ送りボタン
+    for ($i=1; $i <= $pages; $i++)     {
+      if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))       {
+        echo ($paged == $i)? '<li class="active"><a>'.$i.'</a></li>':'<li class="waves-effect"><a href="'.get_pagenum_link($i).'" class="disabled" >'.$i.'</a></li>';
+      }
+    }
+    //1つ進むボタン
+    echo '<li class="waves-effect"><a href="'.get_pagenum_link($paged + 1).'"><i class="material-icons">chevron_right</i></a></li>';
+    //最後尾進むボタン
+    echo '<li class="waves-effect"><a href="'.get_pagenum_link($pages).'"><i class="material-icons">last_page</i></li>';
+    echo '</ul>';
+  }
+}
+
 function bmPageNavi() {
   global $wp_rewrite;
   global $wp_query;
