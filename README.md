@@ -16,6 +16,9 @@ item_place
 - Item input
   - price,remarks,focus
   - All .php including ???_item.php
+- Item sub image
+  - sub_image
+  - All .php including ???_item.php
 - Media and News link
   - media_link1,media_link2,media_link3
   - news.php media.php
