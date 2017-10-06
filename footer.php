@@ -43,7 +43,6 @@
 
     function elementHeight() {
         $('#slider').css('height', windowH - logo - 60 + 'px');
-        $('#hero').css('height', windowH - logo - 60 + 'px');
     };
     elementHeight();
 

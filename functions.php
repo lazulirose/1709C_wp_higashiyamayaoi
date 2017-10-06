@@ -133,35 +133,35 @@ function post_thumbs_gallery($max='-1', $size='thumbnail'){
         }
     }
 }
-//
-//function bmPageNavi() {
-//  global $wp_rewrite;
-//  global $wp_query;
-//  global $paged;
-//    
-//    $total = $wp_query->max_num_pages;
-//    $paginate_base = get_pagenum_link(1);
-//    
-//  if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
-//    $paginate_format = '';
-//    $paginate_base = add_query_arg('page', '%#%');
-//  } else {
-//    $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .
-//    untrailingslashit('?page=%#%', 'paged');;
-//    $paginate_base .= '%_%';  
-//  }
-// 
-//  $result = paginate_links( array(
-//    'prev_text' => __('◀'),
-//    'next_text' => __('▶'),   
-//    'base' => $paginate_base,
-//    'format' => $paginate_format,
-//    'total' => $wp_query->max_num_pages,
-//    'mid_size' => 5,
-//    'current' => ($paged ? $paged : 1),
-//  ));
-//  return $result;   
-//}
+
+function bmPageNavi() {
+  global $wp_rewrite;
+  global $wp_query;
+  global $paged;
+    
+    $total = $wp_query->max_num_pages;
+    $paginate_base = get_pagenum_link(1);
+    
+  if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
+    $paginate_format = '';
+    $paginate_base = add_query_arg('page', '%#%');
+  } else {
+    $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .
+    untrailingslashit('?page=%#%', 'paged');;
+    $paginate_base .= '%_%';  
+  }
+ 
+  $result = paginate_links( array(
+    'prev_text' => __('◀'),
+    'next_text' => __('▶'),   
+    'base' => $paginate_base,
+    'format' => $paginate_format,
+    'total' => $wp_query->max_num_pages,
+    'mid_size' => 5,
+    'current' => ($paged ? $paged : 1),
+  ));
+  return $result;   
+}
 
 function news_post_type() {
     register_post_type( 'news',

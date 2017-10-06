@@ -21,7 +21,7 @@ Template Name: buy
             <div class="l-other">
                 <div class="other">
                     <div class="message">
-                        <p><span>ご注文は、店舗または、電話・FAX<br class="sp-only">お手紙でお願いしております。</span>現在ホームページやメールからの注文は受け付けておりません。<br class="sp-only">ご不便をおかけいたしますがご了承ください。</p>
+                        <p><span>ご注文は、店舗または、電話・FAX<br class="sp-only">お手紙でお願いしております。</span>現在ホームページやメールからの注文は<br class="sp-only">受け付けておりません。<br class="sp-only">ご不便をおかけいたしますがご了承ください。</p>
                     </div>
                 </div>
             </div>

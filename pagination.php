@@ -20,7 +20,7 @@ echo paginate_links( array(
 $param = array(
     'posts_per_page' => 2,
     'paged'          => $paged,
-    'post_type'      => 'news',
+    'post_type'      => 'media',
     'orderby'        => 'post_date',
     'order'          => 'DESC'
 );
