@@ -15,7 +15,7 @@ Template Name: media
             <?php
 		$paged = (int) get_query_var('paged');
 		$args = array(
-			'posts_per_page' => 5,
+			'posts_per_page' => 3,
 			'paged'          => $paged,
 			'orderby'        => 'post_date',
 			'order'          => 'DESC',
@@ -29,9 +29,10 @@ Template Name: media
 			endwhile;
 		endif;
 		wp_reset_postdata();
-		?>        
-       
-       <?php global $wp_rewrite;
+		?>
+
+
+                <?php global $wp_rewrite;
 $paginate_base = get_pagenum_link(1);
 if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
 $paginate_format = '';
@@ -40,27 +41,9 @@ $paginate_base = add_query_arg('paged', '%#%');
 $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .
 user_trailingslashit('page/%#%/', 'paged');;
 $paginate_base .= '%_%';
-}
-echo paginate_links( array(
-'base' => $paginate_base,
-'format' => $paginate_format,
-'total' => $wp_query->max_num_pages,
-'mid_size' => 5,
-'current' => ($paged ? $paged : 1),
-)); ?>
-
-<?php
-$param = array(
-    'posts_per_page' => 2,
-    'paged'          => $paged,
-    'post_type'      => 'media',
-    'orderby'        => 'post_date',
-    'order'          => 'DESC'
-);
-$wp_query->query($param); ?>
-   
-<?php if ( $wp_query->have_posts() ) : ?>
-<?php 
+}?>
+                <?php if ( $wp_query->have_posts() ) : ?>
+                <?php 
 
 global $paged;
 if(empty($paged)) $paged = 1;
@@ -76,28 +59,43 @@ if($pages != 1) {
  } else {
     $next_page_num = $paged + 1;
  } 
-  //現在のページ番号が全ページ数よりも少ないときは「次のページ」タグを出力
-  if ( $paged < $pages ) {
-    echo '<a href="'.get_pagenum_link($paginate_base).'" class="next-btn"><img src="';
-    echo bloginfo('template_directory');
-    echo '/img/dist/next-btn.svg" alt=""></a>';
-  }
- 
 }
+            
 ?>
+                <?php if ( have_posts() ) : ?>
+                <?php while ( have_posts() ) : the_post(); 
+?>
+                <?php endwhile; ?>
+                <?php
+    $next_link = get_next_posts_link('<img src="' .get_template_directory_uri(). '/img/dist/next-btn.svg" alt="">');
 
-<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
- <?php endwhile; ?>
-    <?php endif; ?>
-<!--    <?php next_posts_link('◀'); ?>-->
-<div id="pagination" class="pagination">
-<?php echo bmPageNavi(); // ページネーション出力
-$wp_query = null; 
-$wp_query = $temp;
-?> 
-</div>
-       
-       
+    if ( isset( $next_link ) ) {
+        echo '<ul id="pagination">', PHP_EOL;
+        if( isset( $next_link ) ) {
+            echo '<li>',$next_link,'</li>', PHP_EOL;
+        }
+        echo '</ul>', PHP_EOL;
+    }
+?>
+                    <?php endif; ?>
+
+                    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+
+                    <div id="pagination" class="pagination">
+                        <?php
+    echo paginate_links( array(
+    'prev_text' => __('◀'),
+    'next_text' => __('▶'),   
+    'base' => $paginate_base,
+    'format' => $paginate_format,
+    'total' => $wp_query->max_num_pages,
+    'mid_size' => 5,
+    'current' => ($paged ? $paged : 1),
+  ));
+    ?>
+                    </div>
         </div>
     </main>
     <!--main end-->
