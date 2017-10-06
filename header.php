@@ -11,14 +11,8 @@
     <!--rendering-->
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--icon-->
-    <link rel="shortcut icon" href="">
-    <link rel="apple-touch-icon-precomposed" href="">
     <!--CSS-->
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ; ?>">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/flexslider.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/slick.css" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/slick-theme.css" />
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -34,8 +28,6 @@
                     <span></span>
                     <span></span>
                     <span></span>
-
-
                 </a>
                 <div class="menu-overlay">
                     <ul>
