@@ -7,18 +7,18 @@
  * @package Higashiyama Yaoi
  */
 
-//error_reporting(0);
-//function disable_emojis() {
-//     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-//     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-//     remove_action( 'wp_print_styles', 'print_emoji_styles' );
-//     remove_action( 'admin_print_styles', 'print_emoji_styles' );     
-//     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-//     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );  
-//     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-//     add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-//}
-//add_action( 'init', 'disable_emojis' );
+error_reporting(0);
+function disable_emojis() {
+     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+     remove_action( 'wp_print_styles', 'print_emoji_styles' );
+     remove_action( 'admin_print_styles', 'print_emoji_styles' );     
+     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );  
+     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+     add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+}
+add_action( 'init', 'disable_emojis' );
 
 
 // css
@@ -63,7 +63,7 @@ add_action('admin_menu', 'remove_menus');
 add_action( 'pre_get_posts', 'home_posts_type' );
 function home_posts_type( $wp_query ) {
     if ( ! is_admin() && $wp_query->is_main_query() && $wp_query->is_home() ) {
-        $wp_query->set( 'post_type', array( 'post', 'main_item','standard_item','ss_item','aw_item','assorted_item','recommended_item', 'media' ) );
+        $wp_query->set( 'post_type', array( 'post', 'main_item','standard_item','ss_item','aw_item','assorted_item','recommended_item','media','news' ) );
     }
 }
 
@@ -116,6 +116,12 @@ function responsive_pagination($pages = '', $range = 4){
     echo '</ul>';
   }
 }
+
+add_filter( 'next_posts_link_attributes', 'add_next_posts_link_class' );
+function add_next_posts_link_class() {
+  return 'class="next-btn"';
+}
+
 function post_thumbs_gallery($max='-1', $size='thumbnail'){
     global $post;
     $args = array(
@@ -133,45 +139,21 @@ function post_thumbs_gallery($max='-1', $size='thumbnail'){
         }
     }
 }
-
-function bmPageNavi() {
-  global $wp_rewrite;
-  global $wp_query;
-  global $paged;
-    
-    $total = $wp_query->max_num_pages;
-    $paginate_base = get_pagenum_link(1);
-    
-  if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
-    $paginate_format = '';
-    $paginate_base = add_query_arg('page', '%#%');
-  } else {
-    $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .
-    untrailingslashit('?page=%#%', 'paged');;
-    $paginate_base .= '%_%';  
-  }
- 
-  $result = paginate_links( array(
-    'prev_text' => __('◀'),
-    'next_text' => __('▶'),   
-    'base' => $paginate_base,
-    'format' => $paginate_format,
-    'total' => $wp_query->max_num_pages,
-    'mid_size' => 5,
-    'current' => ($paged ? $paged : 1),
-  ));
-  return $result;   
-}
-
 function news_post_type() {
     register_post_type( 'news',
         array(
             'label' => '新着情報',
             'public'        => true,
             'show_in_menu'  => true,
-            'menu_position' => 5, 
+            'menu_position' => 5,
+            'hierarchical'       => true,
+            'has_archive'        => true,
+            'query_var'          => true,
+            'publicly_queryable' => true,
             'supports' => array(
-                'title'
+                'title',
+                'editor',
+                'thumbnail'
             ), 
         )
     );

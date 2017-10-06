@@ -2,94 +2,55 @@
   slider
 ===================== */
 
-#slider {
+.arrows {
     position: relative;
-    overflow: hidden;
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        width: 100%;
-        position: absolute;
-        margin: 0;
-        padding: 0;
-    }
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.slider__inner:hover #prev,
-.slider__inner:hover #next {
-    opacity: .5;
-    transition: .35s
-}
-
-#prev,
-#next {
+    z-index: 999;
+    width: 100%;
     opacity: 0;
-    display: block;
-    position: absolute;
-    top: 50%;
-    z-index: 500;
-    width: 100px;
-    height: 40px;
-    transition: .25s;
-    cursor: pointer;
-    color: transparent;
+    transform: translateY(-50%);
+    img {
+        position: absolute;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        &:nth-of-type(1) {
+            left: 16px;
+        }
+        &:nth-of-type(2) {
+            right: 16px;
+            transform: rotate(180deg);
+        }
+    }
 }
-#prev {
+
+.slider:hover + .arrows {
+    opacity: 1;
+    transition: .4s;
+}
+.arrows:hover {
+    display: block;
+    opacity: 1;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    position: absolute;
+    z-index: -100px;
     left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
 }
 
-#next {
-    right: -18px;
-    margin-right: 20px;
-}
-
-#prev:before,
-#next:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    height: 50px;
-    margin-top: -25px;
-    border-radius: 50%;
-    background: #000;
-}
-
-#next:before {
-    right: 50px;
-}
-
-#prev:before {
-    left: 50px;
-}
-
-#prev:after,
-#next:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 0;
-    height: 0;
-    margin-top: -20px;
-    border: 20px solid transparent;
-}
-
-#next:after {
-    right: 42px;
-    margin-top: -20px;
-    border-left: 20px solid #fff;
-}
-
-#prev:after {
-    left: 38px;
-    margin-top: -20px;
-    border-right: 20px solid #fff;
+.slider .show {
+    opacity: 1;
+    z-index: 1;
 }
