@@ -3,7 +3,7 @@
     <?php get_template_part('logo'); ?>
     <div class="l-hero">
         <div id="hero" class="hero">
-            <img src="https://placehold.jp/350x150.png" alt="">
+            <img src="<?php bloginfo('template_directory'); ?>/img/dist/news-hero.jpg" alt="about-hero">
         </div>
     </div>
     <div class="container">
@@ -12,114 +12,118 @@
             <?php $args = array('post_type' => 'news' );
                             $customPosts = get_posts($args);
                             if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );?>
-                <div class="news">
-                    <div class="news-img">
+            <div class="news">
+                <div class="news-img">
                     <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-                    </div>
-                    <div class="news-text">
-                        <h3 class="subheading">                        <?php the_title(); ?></h3>
-                        <p class="square s-media">0000/00/00</p>
-                        <p class="media-text">
-                            <?php the_content(); ?>
-                            <br>
+                </div>
+                <div class="news-text">
+                    <h3 class="subheading">
+                        <?php the_title(); ?>
+                    </h3>
+                    <p class="square s-media"><time><?php the_time('Y/m/d') ?></time></p>
+                    <p class="media-text">
+                        <?php the_content(); ?>
+                        <br>
                         <?php if ( get_post_meta($post->ID,'media_link1',true ) ) {
     
     echo '<a href="'; 
     echo get_post_meta($post->ID,'media_link1',true );
     echo '">';
 } ?>
-   <?php if ( get_post_meta($post->ID,'media_text1',true ) ) {
+                        <?php if ( get_post_meta($post->ID,'media_text1',true ) ) {
     
     echo get_post_meta($post->ID,'media_text1',true );
     echo '</a><br>';
-} ?>     <?php if ( get_post_meta($post->ID,'media_link2',true ) ) {
+} ?>
+                        <?php if ( get_post_meta($post->ID,'media_link2',true ) ) {
     
     echo '<a href="'; 
     echo get_post_meta($post->ID,'media_link2',true );
     echo '">';
 } ?>
-   <?php if ( get_post_meta($post->ID,'media_text2',true ) ) {
+                        <?php if ( get_post_meta($post->ID,'media_text2',true ) ) {
     
     echo get_post_meta($post->ID,'media_text2',true );
     echo '</a><br>';
-} ?>     <?php if ( get_post_meta($post->ID,'media_link3',true ) ) {
+} ?>
+                        <?php if ( get_post_meta($post->ID,'media_link3',true ) ) {
     
     echo '<a href="'; 
     echo get_post_meta($post->ID,'media_link3',true );
     echo '">';
 } ?>
-   <?php if ( get_post_meta($post->ID,'media_text3',true ) ) {
+                        <?php if ( get_post_meta($post->ID,'media_text3',true ) ) {
     
     echo get_post_meta($post->ID,'media_text3',true );
     echo '</a>';
-} ?>   
-                   </p>
-                    </div>
+} ?>
+                    </p>
                 </div>
-                <?php endforeach; ?>
-                <?php else : ?>
-                <p>記事がありません。</p>
-                <?php endif; wp_reset_postdata(); ?>
-                <div class="news">
-                    <div class="news-img">
-                        <img src="https://placehold.jp/240x240.png" alt="">
-                    </div>
-                    <div class="news-text">
-                        <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
-                        <p class="square s-media">0000/00/00</p>
-                        <p class="media-text">［ほろよい手帳］たる１月号
-                            <br>「（特集）お酒とお漬物の美味しい関係
-                            <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
-                            <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
-                            <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
-                            <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
-                    </div>
+            </div>
+            <?php endforeach; ?>
+            <?php else : ?>
+            <p>記事がありません。</p>
+            <?php endif; wp_reset_postdata(); ?>
+            <div class="news">
+                <div class="news-img">
+                    <img src="https://placehold.jp/240x240.png" alt="">
                 </div>
-                <div class="news">
-                    <div class="news-img">
-                        <img src="https://placehold.jp/240x240.png" alt="">
-                    </div>
-                    <div class="news-text">
-                        <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
-                        <p class="square s-media">0000/00/00</p>
-                        <p class="media-text">［ほろよい手帳］たる１月号
-                            <br>「（特集）お酒とお漬物の美味しい関係
-                            <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
-                            <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
-                            <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
-                            <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
-                    </div>
+                <div class="news-text">
+                    <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
+                    <p class="square s-media">0000/00/00</p>
+                    <p class="media-text">［ほろよい手帳］たる１月号
+                        <br>「（特集）お酒とお漬物の美味しい関係
+                        <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
+                        <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
+                        <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
+                        <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
                 </div>
-                <div class="news">
-                    <div class="news-img">
-                        <img src="https://placehold.jp/240x240.png" alt="">
-                    </div>
-                    <div class="news-text">
-                        <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
-                        <p class="square s-media">0000/00/00</p>
-                        <p class="media-text">［ほろよい手帳］たる１月号
-                            <br>「（特集）お酒とお漬物の美味しい関係
-                            <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
-                            <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
-                            <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
-                            <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
-                    </div>
+            </div>
+            <div class="news">
+                <div class="news-img">
+                    <img src="https://placehold.jp/240x240.png" alt="">
                 </div>
-                <div class="news">
-                    <div class="news-img">
-                        <img src="https://placehold.jp/240x240.png" alt="">
-                    </div>
-                    <div class="news-text">
-                        <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
-                        <p class="square s-media">0000/00/00</p>
-                        <p class="media-text">［ほろよい手帳］たる１月号
-                            <br>「（特集）お酒とお漬物の美味しい関係
-                            <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
-                            <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
-                            <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
-                            <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
-                    </div>
+                <div class="news-text">
+                    <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
+                    <p class="square s-media">0000/00/00</p>
+                    <p class="media-text">［ほろよい手帳］たる１月号
+                        <br>「（特集）お酒とお漬物の美味しい関係
+                        <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
+                        <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
+                        <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
+                        <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
                 </div>
+            </div>
+            <div class="news">
+                <div class="news-img">
+                    <img src="https://placehold.jp/240x240.png" alt="">
+                </div>
+                <div class="news-text">
+                    <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
+                    <p class="square s-media">0000/00/00</p>
+                    <p class="media-text">［ほろよい手帳］たる１月号
+                        <br>「（特集）お酒とお漬物の美味しい関係
+                        <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
+                        <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
+                        <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
+                        <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
+                </div>
+            </div>
+            <div class="news">
+                <div class="news-img">
+                    <img src="https://placehold.jp/240x240.png" alt="">
+                </div>
+                <div class="news-text">
+                    <h3 class="subheading">たる２０１６年１月号に掲載されました。</h3>
+                    <p class="square s-media">0000/00/00</p>
+                    <p class="media-text">［ほろよい手帳］たる１月号
+                        <br>「（特集）お酒とお漬物の美味しい関係
+                        <br> 京都の冬の風物詩「千枚漬」」に当店を紹介していただきました。
+                        <br><a href="">※「千枚漬」の紹介ページ（ＰＣ版）</a>
+                        <br><a href="">※「千枚漬」の紹介ページ（スマートフォン版）</a>
+                        <br><a href="">※「千枚漬」ギフトの紹介ページ</a></p>
+                </div>
+            </div>
         </div>
         <div class="l-pagination">
             <a href="" class="next-btn"><img src="./img/next-btn.svg" alt=""></a>

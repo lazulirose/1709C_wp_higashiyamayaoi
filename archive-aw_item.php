@@ -6,7 +6,7 @@
         <div class="container__inner">
             <div class="l-recommend l-itemlist">
                 <h3 class="subheading">秋・冬のおすすめ商品</h3>
-                <div class="itemlist">
+                <div class="l-itemlist">
                     <ul class="itemlist">
                         <?php $args = array('post_type' => 'aw_item' );
                             $customPosts = get_posts($args);

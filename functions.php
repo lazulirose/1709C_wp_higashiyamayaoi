@@ -116,6 +116,23 @@ function responsive_pagination($pages = '', $range = 4){
     echo '</ul>';
   }
 }
+function post_thumbs_gallery($max='-1', $size='thumbnail'){
+    global $post;
+    $args = array(
+        'post_type' => 'attachment',
+        'numberposts' => $max,
+        'post_status' => inherit,
+        'post_parent' => $post->ID,
+        'post_mime_type' => 'image',
+        'orderby' => 'menu_order ID',
+    );
+    $attachments = get_posts($args);
+    if (is_array($attachments)) {
+        foreach ($attachments as $attachment) {
+           echo '<a href="'.$attachment->guid.'" title="'.$attachment->post_title.'">'.wp_get_attachment_image($attachment->ID,$size)."</a>";
+        }
+    }
+}
 
 function bmPageNavi() {
   global $wp_rewrite;

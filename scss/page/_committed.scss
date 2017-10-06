@@ -45,9 +45,7 @@
         margin-top: 100vh;
     }
 }
-section:last-child .effect__inner {
-    padding-bottom: 0 !important;
-}
+
 .effect__inner {
     position: relative;
     z-index: 200;
@@ -73,6 +71,8 @@ section:last-child .effect__inner {
     display: -o-flex;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    text-align: -webkit-center;
     h2 {
         margin: 35px 0;
         text-align: center;
@@ -114,7 +114,14 @@ section:last-child .effect__inner {
 }
 
 .shadow {
-    box-shadow: 0px 0px 20px 10px #000;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,.5);
+}
+
+section:last-child .effect__inner {
+    padding-bottom: 0 !important;
+}
+main + .l-banner {
+    margin: 130px auto 36px;
 }
 
 /*  parallax
@@ -128,7 +135,7 @@ section:last-child .effect__inner {
 }
 
 .parallax-bg {
-    background-image: url(./img/dist/committed-bg);
+    background-image: url(img/dist/committed-bg.jpg);
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -141,7 +148,7 @@ section:last-child .effect__inner {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url(./img/dist/committed-hero);
+    background-image: url(img/dist/committed-hero.jpg);
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;

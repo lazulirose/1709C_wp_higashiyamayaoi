@@ -11,22 +11,15 @@ $.fn.autoChange = function (config) {
         var next = 1;
         var elementP = $(this);
         var element = $(elementP).children();
-        
         var windowH = $(window).height();
-        var logo = $('#hero-logo').height();
-
+        
         $(element).hide();
         $(element[0]).show();
 
-        function elementHeight() {
-            $('#slider').css('height', windowH - logo - 60 + 'px');
-        };
-        elementHeight();
         $(window).on('resize', function () {
             elementHight();
         });
-        var change = function () {
-            $('#next').click(function () {
+          $('#next').click(function () {
                 if (current == 3) {
                     current = element.length - 1;
                     next = 0;
@@ -46,6 +39,7 @@ $.fn.autoChange = function (config) {
                 change();
                 return false;
             });
+        var change = function () {
             if (options.effect == 'fade') {
                 $(element[current]).fadeOut(options.speed);
                 $(element[next]).fadeIn(options.speed);

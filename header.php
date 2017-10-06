@@ -30,7 +30,13 @@
     <header class="l-header">
         <div id="header">
             <nav class="dc-menu">
-                <a href="#" class="dc-menu-trigger"><span>Menu</span></a>
+                <a href="#" class="dc-menu-trigger menu-trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+
+                </a>
                 <div class="menu-overlay">
                     <ul>
                         <li>

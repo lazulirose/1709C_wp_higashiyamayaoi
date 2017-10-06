@@ -6,7 +6,9 @@
             <?php if(have_posts()): while(have_posts()): the_post(); ?>
             <div class="item__left">
                 <?php the_post_thumbnail('thumbnail'); ?>
-            </div>
+<?php $image = wp_get_attachment_image_src(get_field('sub_image'), 'full'); ?>
+<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(get_field('img_test')) ?>">
+                </div>
             <div class="item__right">
                 <h2 class="subheading">
                     <?php the_title(); ?>

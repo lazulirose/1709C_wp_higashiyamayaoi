@@ -17,8 +17,14 @@ body {
     font-size: 12px;
 }
 
-//*  Sectioning content
-//------------------------*/
+/*  Sectioning content
+------------------------*/
+
+header,main,aside,footer {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
 
 /*  Heading content
 ------------------------*/
