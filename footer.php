@@ -16,20 +16,47 @@
 </footer>
 <!--footer end-->
 <!-- SCRIPTS -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/common.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/min/feature.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/min/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/min/slick.min.js"></script>
 <script type="text/javascript">
     $(function() {
-        $('#slider ul').autoChange({
-            effect: 'fade',
-            type: 'repeat',
-            timeout: 3000,
-            speed: 1000
-        })
+        var img = $("#slider").children("img"),
+            num = img.length,
+            count = 0,
+            timer;
+        startTimer();
+        img.eq(0).addClass("show");
+        
+        function startTimer() {
+            timer = setInterval(function() {
+                img.eq(count).removeClass("show");
+                count++;
+                if (count >= num) {
+                    count = 0;
+                }
+                img.eq(count).addClass("show");
+            }, 4000);
+        }
+        $('#prev').click(function() {
+            clearInterval(timer);
+            img.eq(count).removeClass("show"); 
+            count--;
+            if (count < 0) {
+                count = num - 1;
+            }
+            console.log(count);
+            img.eq(count).addClass("show");
+        });
+        $('#next').click(function() {
+            clearInterval(timer);
+            img.eq(count).removeClass("show"); 
+            count++;
+            if (count > num - 1) {
+                count = 0;
+            }
+            console.log(count);
+            img.eq(count).addClass("show");
+        });
     });
     $(function() {
         $('.dc-menu-trigger').click(function() {
@@ -38,14 +65,16 @@
             $('#header').toggleClass("shownav");
         });
     });
-        var windowH = $(window).height();
-    var logo = $('#hero-logo').height();
-
+    var windowH = $(window).height(),
+        logo = $('#hero-logo').height(),
+        viewport = windowH - logo - 60;
+    
     function elementHeight() {
-        $('#slider').css('height', windowH - logo - 60 + 'px');
+        $('#slider').css('height', viewport + 'px');
+        $('.arrows').css('bottom', viewport / 1.7 + 'px');
     };
     elementHeight();
-
+    
 </script>
 <?php wp_footer(); ?>
 </body>

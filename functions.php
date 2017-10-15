@@ -45,22 +45,22 @@ function remove_menus () {
     global $menu;
     unset($menu[2]);	// ダッシュボード
     unset($menu[4]);  // メニューの線1
-    //unset($menu[5]);  // 投稿
+    unset($menu[5]);  // 投稿
     unset($menu[10]);  // メディア
     unset($menu[15]); // リンク
-    //unset($menu[20]); // ページ
+    unset($menu[20]); // ページ
     unset($menu[25]); // コメント
     unset($menu[59]); // メニューの線2
     //unset($menu[60]); // テーマ
-    //unset($menu[65]); // プラグイン
+    unset($menu[65]); // プラグイン
     unset($menu[70]); // プロフィール
     //unset($menu[75]); // ツール
     //unset($menu[80]); // 設定
     unset($menu[90]); // メニューの線3
 }
 add_action('admin_menu', 'remove_menus');
-
 add_action( 'pre_get_posts', 'home_posts_type' );
+
 function home_posts_type( $wp_query ) {
     if ( ! is_admin() && $wp_query->is_main_query() && $wp_query->is_home() ) {
         $wp_query->set( 'post_type', array( 'post', 'main_item','standard_item','ss_item','aw_item','assorted_item','recommended_item','media','news' ) );
@@ -79,44 +79,7 @@ function my_disable_redirect_canonical( $redirect_url ) {
 		return $redirect_url;
 		}
 	}
-
 }
-//ページネーション
-function responsive_pagination($pages = '', $range = 4){
-  $showitems = ($range * 2)+1;
- 
-  global $paged;
-  if(empty($paged)) $paged = 1;
- 
-  //ページ情報の取得
-  if($pages == '') {
-    global $wp_query;
-    $pages = $wp_query->max_num_pages;
-    if(!$pages){
-      $pages = 1;
-    }
-  }
- 
-  if(1 != $pages) {
-    echo '<ul class="pagination">';
-    //先頭戻るボタン
-    echo '<li class="waves-effect"><a href="'.get_pagenum_link(1).'"><i class="material-icons">first_page</i></li>';
-    //1つ戻るボタン
-    echo '<li class="waves-effect"><a href="'.get_pagenum_link($paged - 1).'"><i class="material-icons">chevron_left</i></a></li>';
-    //番号つきページ送りボタン
-    for ($i=1; $i <= $pages; $i++)     {
-      if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))       {
-        echo ($paged == $i)? '<li class="active"><a>'.$i.'</a></li>':'<li class="waves-effect"><a href="'.get_pagenum_link($i).'" class="disabled" >'.$i.'</a></li>';
-      }
-    }
-    //1つ進むボタン
-    echo '<li class="waves-effect"><a href="'.get_pagenum_link($paged + 1).'"><i class="material-icons">chevron_right</i></a></li>';
-    //最後尾進むボタン
-    echo '<li class="waves-effect"><a href="'.get_pagenum_link($pages).'"><i class="material-icons">last_page</i></li>';
-    echo '</ul>';
-  }
-}
-
 add_filter( 'next_posts_link_attributes', 'add_next_posts_link_class' );
 function add_next_posts_link_class() {
   return 'class="next-btn"';
@@ -139,6 +102,24 @@ function post_thumbs_gallery($max='-1', $size='thumbnail'){
         }
     }
 }
+function posts_per_page($query) {
+
+  if ( is_admin() || ! $query->is_main_query() ){
+      $query->set( 'posts_per_page', '30' );  
+      //return;
+ }
+    if ( $query->is_post_type_archive( 'itemlist' ) ) {
+        $query->set( 'posts_per_page', '30' );
+    }
+    if ( $query->is_post_type_archive( 'media' ) ) {
+        $query->set( 'posts_per_page', '4' );
+    }
+    if ( $query->is_post_type_archive( 'news' ) ) {
+        $query->set( 'posts_per_page', '4' );
+    }
+}
+add_action( 'pre_get_posts', 'posts_per_page' );
+
 function news_post_type() {
     register_post_type( 'news',
         array(

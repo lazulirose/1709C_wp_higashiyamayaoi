@@ -13,7 +13,7 @@
                             if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );?>
                         <li class="itemlist__inner">
                             <a class="item itemlist-item" href="<?php the_permalink(); ?>">
-                                <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+                                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('post_150x200_thumbnail'); } ?>
                                 <h4 class="item-title">
                                     <?php the_title(); ?>
                                 </h4>

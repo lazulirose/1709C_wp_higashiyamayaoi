@@ -16,7 +16,7 @@ Template Name: お知らせ
             <?php
 		$paged = (int) get_query_var('paged');
 		$args = array(
-			'posts_per_page' => 3,
+			'posts_per_page' => 4,
 			'paged'          => $paged,
 			'orderby'        => 'post_date',
 			'order'          => 'DESC',

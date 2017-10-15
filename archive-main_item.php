@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 <main>
     <?php get_template_part('logo'); ?>
+    <div class="l-hero">
+        <div id="hero" class="hero">
+            <img src="<?php bloginfo('template_directory'); ?>/img/dist/standard_item-hero.jpg" alt="item-hero">
+        </div>
+    </div>
     <div class="container">
         <h2 class="title">商品一覧</h2>
         <div class="container__inner">
@@ -13,7 +18,7 @@
                             if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );?>
                         <li class="itemlist__inner">
                             <a class="item itemlist-item" href="<?php the_permalink(); ?>">
-                                <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+                                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('post_150x200_thumbnail'); } ?>
                                 <h4 class="item-title">
                                     <?php the_title(); ?>
                                 </h4>

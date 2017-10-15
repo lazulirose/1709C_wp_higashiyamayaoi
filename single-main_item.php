@@ -5,7 +5,7 @@
         <div class="l-item">
             <?php if(have_posts()): while(have_posts()): the_post(); ?>
             <div class="item__left">
-                <?php the_post_thumbnail('thumbnail'); ?>
+                <?php the_post_thumbnail('post_420x300_thumbnail'); ?>
             </div>
             <div class="item__right">
                 <h2 class="subheading">

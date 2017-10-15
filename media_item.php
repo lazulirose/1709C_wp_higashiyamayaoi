@@ -1,7 +1,7 @@
 <div class="l-media">
     <div class="media">
         <div class="media-img">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('post_380x400_thumbnail'); } ?>
         </div>
         <div class="media-text">
             <h3 class="subheading">

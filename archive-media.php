@@ -15,7 +15,7 @@ Template Name: media
             <?php
 		$paged = (int) get_query_var('paged');
 		$args = array(
-			'posts_per_page' => 3,
+			'posts_per_page' => 4,
 			'paged'          => $paged,
 			'orderby'        => 'post_date',
 			'order'          => 'DESC',
@@ -80,6 +80,8 @@ if($pages != 1) {
                     <?php endif; ?>
 
                     <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+                    
+                    
                     <?php endwhile; ?>
                     <?php endif; ?>
 
@@ -91,7 +93,7 @@ if($pages != 1) {
     'base' => $paginate_base,
     'format' => $paginate_format,
     'total' => $wp_query->max_num_pages,
-    'mid_size' => 5,
+    'mid_size' => 3,
     'current' => ($paged ? $paged : 1),
   ));
     ?>

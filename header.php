@@ -11,8 +11,6 @@
     <!--rendering-->
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--CSS-->
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ; ?>">
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -59,7 +57,7 @@
                     <a href="<?php echo home_url('/committed'); ?>" class="header-nav-item">東山八百伊のこだわり</a>
                 </li>
                 <li>
-                    <a href="<?php echo home_url('/itemlist'); ?>" class="header-nav-item">商品一覧</a>
+                    <a href="<?php echo home_url('/main_item'); ?>" class="header-nav-item">商品一覧</a>
                 </li>
                 <li>
                     <a href="<?php echo home_url('/buy'); ?>" class="header-nav-item">お買い求め方法</a>

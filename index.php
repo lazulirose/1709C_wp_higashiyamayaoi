@@ -30,7 +30,7 @@
             <ul class="recommend">
 
                 <?php $args = array(
-        'numberposts' => 8,                //表示（取得）する記事の数
+        'numberposts' => 6,                //表示（取得）する記事の数
         'post_type' => 'recommended_item'    //投稿タイプの指定
     );
     $posts = get_posts( $args );
