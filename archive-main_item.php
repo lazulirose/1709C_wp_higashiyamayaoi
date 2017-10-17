@@ -59,4 +59,5 @@
         </div>
     </div>
 </main>
+<?php get_template_part('aside'); ?>
 <?php get_footer(); ?>

@@ -44,8 +44,8 @@ Template Name: committed
                     </div>
                 </section>
                 <section>
-                    <div class="left effect">
-                        <div class="effect__inner two shadow">
+                    <div class="left effect shadow">
+                        <div class="effect__inner two">
                             <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-1.jpg" alt="committed" class="effect shadow">
                             <p class="text skill effect-slow left-slow">
                                 <span>伝承の技</span> 伝統に裏打ちされた製法と、独特な工夫を重ねた熟練の職人が、自然の恵みを熟成の美味しさへと心を込めて漬け込みます。 京仕立ての伝統手法をしっかりと受け継ぎ、日々新たな丹精で大切に守り続けています。
@@ -57,7 +57,7 @@ Template Name: committed
                 </section>
 
                 <section>
-                    <div class="right effect">
+                    <div class="right effect shadow">
                         <div class="effect__inner shadow">
                             <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-2.jpg" alt="committed" class="effect shadow">
                             <p class="text susai effect-slow right-slow">
@@ -68,14 +68,13 @@ Template Name: committed
                     </div>
                 </section>
                 <section>
-                    <div class="left effect">
+                    <div class="left effect shadow">
                         <div class="effect__inner shadow">
                             <img src="<?php bloginfo('template_directory'); ?>/img/dist/committed-3.jpg" alt="committed" class="effect">
                             <p class="text fresh effect-slow left-slow">
                                 <span>新鮮さ</span> 「樽から出したての新鮮なお漬け物をお届けしたい」 野菜の新鮮さにこだわっているので、大量に漬け込んだり、保存料や着色料を使用せず、毎日必要な分だけ漬けています。
                             </p>
                         </div>
-
                     </div>
                 </section>
             </div>

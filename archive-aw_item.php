@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 <main>
     <?php get_template_part('logo'); ?>
+    <div class="l-hero">
+        <div id="hero" class="hero">
+            <img src="<?php bloginfo('template_directory'); ?>/img/dist/standard_item-hero.jpg" alt="item-hero">
+        </div>
+    </div>
     <div class="container">
         <h2 class="title">商品一覧</h2>
         <div class="container__inner">
@@ -53,4 +58,5 @@
         </div>
     </div>
 </main>
+<?php get_template_part('aside'); ?>
 <?php get_footer(); ?>

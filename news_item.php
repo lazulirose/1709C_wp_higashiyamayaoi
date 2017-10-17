@@ -4,7 +4,6 @@
     </div>
     <div class="news-text">
         <h3 class="subheading"><?php the_title(); ?></h3>
-        <p class="square s-media"><time><?php the_time('Y/m/d') ?></time></p>
         <p class="media-text">
            <?php the_content(); ?>
             <br>
